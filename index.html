@@ -1331,6 +1331,14 @@
   cards[0].classList.add('is-big'); run();
 })();
 </script>
+<style>
+/* opening curtains: both halves slide out together, same speed */
+#pre .preloader__shade{transform:translate3d(0,0,0);transition:transform 1.4s cubic-bezier(.22,1,.36,1);will-change:transform;backface-visibility:hidden}
+#pre .preloader__shade.--l{left:0;width:50.5%;background:radial-gradient(120% 80% at 100% 50%,#2a1a0f,#0c0804 70%)}
+#pre .preloader__shade.--r{right:0;left:auto;width:50.5%;background:radial-gradient(120% 80% at 0% 50%,#2a1a0f,#0c0804 70%)}
+#pre.open .preloader__shade.--l{transform:translate3d(-100%,0,0)}
+#pre.open .preloader__shade.--r{transform:translate3d(100%,0,0)}
+</style>
 <!-- ═══ Touch interactivity (phones/tablets get the desktop hover effects) ═══ -->
 <style>
 @keyframes tfxTap{0%{scale:1}35%{scale:.965}100%{scale:1}}
