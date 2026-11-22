@@ -412,6 +412,20 @@
 .fvisit{margin:0 0 12px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.72)}
 .fvisit a{color:var(--sand)}
 </style>
+<style>
+/* themed occasion dropdown */
+.osel{position:relative}
+.osel select{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px}
+.osel__btn{width:100%;display:flex;justify-content:space-between;align-items:center;font:inherit;font-size:17px;color:var(--ink);background:transparent;border:0;border-bottom:.8px solid var(--tan);padding:8px 0;cursor:pointer;text-align:left;transition:border-color .4s}
+.osel__btn:focus-visible,.osel.is-open .osel__btn{outline:none;border-color:var(--brown)}
+.osel__btn svg{width:10px;height:6px;flex:none;color:var(--brown);transition:transform .35s}
+.osel.is-open .osel__btn svg{transform:rotate(180deg)}
+.osel__list{position:absolute;left:0;right:0;top:calc(100% + 6px);z-index:20;margin:0;padding:6px 0;list-style:none;background:#f9f2e9;border:.8px solid var(--tan);box-shadow:0 18px 40px #513a2626;opacity:0;transform:translateY(-6px);pointer-events:none;transition:opacity .25s,transform .25s}
+.osel.is-open .osel__list{opacity:1;transform:none;pointer-events:auto}
+.osel__list li{padding:11px 16px;font-size:15px;color:var(--brown);cursor:pointer;transition:background .2s,color .2s}
+.osel__list li:hover,.osel__list li.is-active{background:#efe3d3;color:#4a3726}
+.osel__list li[aria-selected="true"]{font-weight:600}
+</style>
 </head>
 <body>
 <div class="preloader" id="pre" aria-hidden="true">
@@ -684,7 +698,7 @@
       <div class="row2">
         <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="f-occ">Occasion</label>
-          <select id="f-occ" name="occasion"><option>Bespoke suit</option><option>Formal shirts</option><option>Ethnic Wear</option><option>Black tie</option><option>Alterations</option></select></div>
+          <select id="f-occ" name="occasion"><option>Bespoke suit</option><option>Formal shirts</option><option>Ethnic Wear</option><option>Black tie</option></select></div>
       </div>
       <div class="row2">
         <div class="field"><label for="f-email">Email (optional)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
@@ -1203,6 +1217,41 @@
     pic.addEventListener('mouseenter', function () { show(i + 1); t = setInterval(function () { show(i + 1); }, 1600); });
     pic.addEventListener('mouseleave', function () { clearInterval(t); show(0); });
   });
+})();
+</script>
+<script>
+/* themed occasion dropdown (keeps the real select for the form) */
+(function () {
+  var sel = document.getElementById('f-occ'); if (!sel) return;
+  var wrap = document.createElement('div'); wrap.className = 'osel';
+  sel.parentNode.insertBefore(wrap, sel); wrap.appendChild(sel);
+  var btn = document.createElement('button'); btn.type = 'button'; btn.className = 'osel__btn';
+  btn.setAttribute('aria-haspopup', 'listbox'); btn.setAttribute('aria-expanded', 'false');
+  btn.innerHTML = '<span></span><svg viewBox="0 0 10 6" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.1"/></svg>';
+  var list = document.createElement('ul'); list.className = 'osel__list'; list.setAttribute('role', 'listbox');
+  wrap.appendChild(btn); wrap.appendChild(list);
+  var label = document.querySelector('label[for="f-occ"]'); if (label) label.addEventListener('click', function (e) { e.preventDefault(); btn.focus(); });
+  sel.tabIndex = -1;
+  function build() {
+    list.innerHTML = '';
+    Array.prototype.forEach.call(sel.options, function (o, i) {
+      var li = document.createElement('li'); li.setAttribute('role', 'option'); li.textContent = o.text; li.dataset.i = i;
+      li.setAttribute('aria-selected', i === sel.selectedIndex ? 'true' : 'false');
+      li.addEventListener('click', function () { sel.selectedIndex = i; sel.dispatchEvent(new Event('change', { bubbles: true })); close(); btn.focus(); });
+      list.appendChild(li);
+    });
+    btn.firstChild.textContent = sel.options[sel.selectedIndex] ? sel.options[sel.selectedIndex].text : '';
+  }
+  function open() { wrap.classList.add('is-open'); btn.setAttribute('aria-expanded', 'true'); }
+  function close() { wrap.classList.remove('is-open'); btn.setAttribute('aria-expanded', 'false'); }
+  btn.addEventListener('click', function () { wrap.classList.contains('is-open') ? close() : open(); });
+  btn.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); var n = sel.selectedIndex + (e.key === 'ArrowDown' ? 1 : -1); if (n >= 0 && n < sel.options.length) { sel.selectedIndex = n; sel.dispatchEvent(new Event('change', { bubbles: true })); } }
+    if (e.key === 'Escape') close();
+  });
+  document.addEventListener('click', function (e) { if (!wrap.contains(e.target)) close(); });
+  sel.addEventListener('change', build);
+  build();
 })();
 </script>
 </body>
