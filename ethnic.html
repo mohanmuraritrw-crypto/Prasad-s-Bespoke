@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Ethnic Wear | Prasads Bespoke</title>
-<meta name="description" content="Kurtas, sherwanis, modi coats, bandhgalas and indo-western, made to your measure by Prasads Bespoke.">
+<meta name="description" content="Kurtas, sherwanis, sadris and Nehru jackets, bandhgalas and indo-western, made to your measure by Prasads Bespoke.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap">
@@ -45,7 +45,6 @@
   .eth__eye{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
   .eth__count{font-family:var(--serif);font-size:clamp(54px,6vw,96px);line-height:1;margin:14px 0 10px;font-weight:300}
   .eth__count span{font-size:.38em;color:var(--muted)}
-  .eth__for{margin-top:10px;font-family:var(--serif);font-style:italic;font-size:clamp(16px,1.25vw,20px);color:var(--gold-2)}
   .eth__desc{font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.4vw,22px);line-height:1.45;color:var(--muted);margin:0;min-height:3em;transition:opacity .4s}
 
   /* ── right title list ── */
@@ -55,7 +54,7 @@
   .eth__info{transition:opacity .5s ease}
   .eth__item{opacity:0;transform:translateX(60px);transition:opacity .7s ease,transform .9s var(--ease);transition-delay:calc(var(--i) * 150ms)}
   .eth.is-ready .eth__item{opacity:1;transform:none}
-  .eth__t{display:inline-flex;align-items:baseline;gap:18px;font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.2vw,56px);line-height:1.08;color:var(--white);transition:color .4s,opacity .4s,transform .5s var(--ease)}
+  .eth__t{display:inline-flex;align-items:baseline;gap:18px;font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.2vw,56px);line-height:1.08;text-align:left;color:var(--white);transition:color .4s,opacity .4s,transform .5s var(--ease)}
   .eth__t sup{font-family:var(--sans);font-size:11px;letter-spacing:.2em;color:var(--gold);transform:translateY(-1.6em)}
   .eth__list.has-active .eth__t{opacity:.32}
   .eth__item.active .eth__t{opacity:1;color:var(--gold-2);transform:translateX(14px)}
@@ -191,8 +190,7 @@
   </header>
 
   <div class="eth__info">
-    <div class="eth__eye">Wedding &amp; festive collection</div>
-    <div class="eth__for">For the groom, his father &amp; brothers</div>
+    <div class="eth__eye">Ethnic collection</div>
     <div class="eth__count"><b id="ethNum">01</b> <span>/ 05</span></div>
     <p class="eth__desc" id="ethDesc"></p>
   </div>
@@ -246,7 +244,7 @@
         ['Sherwani No. 03', ['./images/ethnic/sherwanis/sherwani%203a.webp','./images/ethnic/sherwanis/sherwani%203b.webp','./images/ethnic/sherwanis/sherwani%203c.webp']],
         ['Sherwani No. 04', ['./images/ethnic/sherwanis/sherwani%204a.webp','./images/ethnic/sherwanis/sherwani%204b.webp','./images/ethnic/sherwanis/sherwani%204c.webp']]
       ] },
-    { id:'modi-coats', title:'Modi Coats', desc:'A sleeveless layer that lifts any kurta, from office to celebration.',
+    { id:'sadri-nehru-jackets', title:'Sadri / Nehru Jackets', one:'sadri and Nehru jacket', desc:'A sleeveless layer that lifts any kurta, from office to celebration.',
       bg:'', soon:true, items:[] },
     { id:'bandhgalas', title:'Bandhgalas', desc:'Indian formal at its finest. Structured, minimal and quietly grand.',
       bg:'./images/ethnic/bg/bandhgalas.webp', pos:'72% center',
@@ -311,7 +309,7 @@
   function fill(i) {
     var d = DATA[i];
     pTitle.textContent = d.title;
-    if (d.soon) { grid.innerHTML = '<p class="eth__soon">Catalogue coming soon.<br><span>Every ' + d.title.replace(/s$/, '').toLowerCase() + ' is still made to order. <a href="./index.html#contact">Book a sitting</a> to have yours cut.</span></p>'; void grid.offsetWidth; grid.classList.add('show'); return; }
+    if (d.soon) { grid.innerHTML = '<p class="eth__soon">Catalogue coming soon.<br><span>Every ' + (d.one || d.title.replace(/s$/, '').toLowerCase()) + ' is still made to order. <a href="./index.html#contact">Book a sitting</a> to have yours cut.</span></p>'; void grid.offsetWidth; grid.classList.add('show'); return; }
     grid.innerHTML = d.items.map(function (it, k) {
       var pics = Array.isArray(it[1]) ? it[1] : [it[1]];
       var imgs = pics.map(function (src, j) {
@@ -715,20 +713,5 @@
 })();
 </script>
 
-<script>
-/* Visitors arriving from a Google/YouTube ad get an ad-specific WhatsApp message */
-(function(){
-  try{
-    var q=location.search, fromAd=/[?&](gclid|gbraid|wbraid)=/.test(q)||/[?&]utm_source=(google|youtube)/i.test(q);
-    if(fromAd){ try{sessionStorage.setItem('pbAd','1')}catch(e){} }
-    try{ if(sessionStorage.getItem('pbAd')==='1') fromAd=true }catch(e){}
-    if(!fromAd) return;
-    var msg=encodeURIComponent('Hi, I saw your ad and want to book a wedding fitting.');
-    document.querySelectorAll('a[href^="https://wa.me/918555002624"]').forEach(function(a){
-      a.href='https://wa.me/918555002624?text='+msg;
-    });
-  }catch(e){}
-})();
-</script>
 </body>
 </html>
