@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Ethnic Wear | Prasads Bespoke</title>
-<meta name="description" content="Kurtas, sherwanis, jodhpuris, modi coats, bandhgalas and indo-western, made to your measure by Prasads Bespoke.">
+<meta name="description" content="Kurtas, sherwanis, modi coats, bandhgalas and indo-western, made to your measure by Prasads Bespoke.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap">
@@ -74,7 +74,7 @@
   .eth__ph h2{transition:opacity .3s;font-family:var(--serif);font-weight:400;font-size:clamp(34px,3.4vw,56px);line-height:1;margin:6px 0 0}
   .eth__close{width:44px;height:44px;flex:none;border:1px solid rgba(255,255,255,.35);border-radius:50%;display:grid;place-items:center;font-size:18px;transition:background .3s,color .3s}
   .eth__close:hover{background:var(--gold-2);color:var(--ink)}
-  .eth__grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:auto;align-content:start;gap:40px 24px;overflow-y:auto;overscroll-behavior:contain;padding:0 12px 80px 0;scrollbar-width:thin;scrollbar-color:rgba(232,207,174,.45) transparent;-webkit-mask-image:linear-gradient(to bottom,#000 86%,transparent 100%);mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)}
+  .eth__grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:auto;align-content:start;gap:40px 24px;overflow-y:auto;overscroll-behavior:contain;padding:0 12px 80px 0;-webkit-mask-image:linear-gradient(to bottom,#000 86%,transparent 100%);mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)}
   .eth__card{display:block;opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .8s var(--ease)}
   .eth__grid.show .eth__card{opacity:1;transform:none;transition-delay:calc(.2s + min(var(--i), 5) * 150ms)}
   .eth__item.opened .eth__t{color:var(--gold-2)}
@@ -97,7 +97,7 @@
     .eth.is-open .eth__t{font-size:24px}
     .eth.is-open .eth__more,.eth.is-open .eth__t sup{display:none}
     .eth__brand{position:absolute;left:50%;transform:translateX(-50%)}
-    .eth__panel{width:100%;bottom:auto;height:60%;padding:80px 20px 16px;border-right:0;border-bottom:0;transform:translateY(-100%);-webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 100%);mask-image:linear-gradient(to bottom,#000 82%,transparent 100%)}
+    .eth__panel{width:100%;bottom:auto;height:60%;padding:80px 20px 16px;border-bottom:0;transform:translateY(-100%);-webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 100%);mask-image:linear-gradient(to bottom,#000 82%,transparent 100%)}
     .eth__ph{margin-bottom:14px}
     .eth__ph h2{font-size:28px}
     .eth__grid{gap:22px 12px;grid-template-columns:repeat(2,1fr)}
@@ -105,6 +105,43 @@
     .eth__card h3{font-size:14px}
   }
   @media (prefers-reduced-motion:reduce){*{transition-duration:.01s!important;transition-delay:0s!important}}
+</style>
+<style>
+  /* card photo slider (hover) */
+  .eth__card figure{position:relative;height:0;padding-bottom:160%;overflow:hidden}
+  .eth__slides{position:absolute;inset:0;display:flex;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+  .eth__slides img{position:relative!important;inset:auto!important;flex:0 0 100%;width:100%!important;height:100%!important;object-fit:cover}
+
+  /* lightbox */
+  .lb{position:fixed;inset:0;z-index:9995;display:flex;flex-direction:column;background:rgba(10,7,4,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+    opacity:0;visibility:hidden;transition:opacity .45s ease,visibility 0s linear .45s}
+  .lb.open{opacity:1;visibility:visible;transition:opacity .45s ease}
+  .lb__stage{flex:1;min-height:0;position:relative;display:flex;align-items:center;justify-content:center;padding:70px 90px 10px}
+  .lb__img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;box-shadow:0 30px 80px rgba(0,0,0,.5);transform:scale(.97);opacity:0}
+  .lb__img.in{animation:lbIn .6s cubic-bezier(.22,1,.36,1) forwards}
+  @keyframes lbIn{to{transform:none;opacity:1}}
+  .lb__arrow,.lb__close{position:absolute;width:52px;height:52px;border-radius:50%;border:1px solid rgba(232,207,174,.5);background:rgba(20,14,10,.4);color:#f3dcc0;font-size:20px;display:grid;place-items:center;transition:background .3s,color .3s}
+  .lb__arrow:hover,.lb__close:hover{background:#e8cfae;color:#0c0805}
+  .lb__arrow{top:50%;transform:translateY(-50%)}
+  .lb__arrow.--prev{left:24px}.lb__arrow.--next{right:24px}
+  .lb__close{top:22px;right:24px;width:46px;height:46px;font-size:16px}
+  .lb.one .lb__arrow,.lb.one .lb__thumbs{display:none}
+  .lb__bar{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 5vw 26px;border-top:1px solid rgba(232,207,174,.18)}
+  .lb__count{display:block;font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:.3em;color:#d9b48a;margin-bottom:6px}
+  .lb__name{margin:0;font-family:"Cormorant Garamond",serif;font-weight:400;font-size:clamp(22px,2vw,32px);color:#fff}
+  .lb__thumbs{display:flex;gap:10px}
+  .lb__thumbs button{width:52px;height:70px;padding:0;border:1px solid transparent;border-radius:3px;overflow:hidden;opacity:.5;transition:opacity .3s,border-color .3s}
+  .lb__thumbs button.on{opacity:1;border-color:#e8cfae}
+  .lb__thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+  .lb__book{flex:none;font-family:"Montserrat",sans-serif;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:#f3dcc0;padding:13px 24px;border:1px solid rgba(232,207,174,.6);border-radius:999px;text-decoration:none;transition:background .3s,color .3s}
+  .lb__book:hover{background:#e8cfae;color:#0c0805}
+  @media (max-width:760px){
+    .lb__stage{padding:64px 12px 8px}
+    .lb__arrow{display:none}
+    .lb__bar{flex-wrap:wrap;gap:14px;padding:14px 16px 20px}
+    .lb__thumbs{order:3;width:100%}
+    .lb__thumbs button{width:44px;height:58px}
+  }
 </style>
 <style>
   /* ── loading screen ── */
@@ -123,24 +160,15 @@
   .pl.is-gone{display:none}
   @keyframes plRise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
 
-  /* ── custom cursor (mouse only) ── */
-  .cur,.cur__ring{display:none}
-  @media (hover:hover) and (pointer:fine){
-    *,*::before,*::after{cursor:none!important}
-    .cur,.cur__ring{display:block;position:fixed;left:0;top:0;z-index:200;pointer-events:none;will-change:transform}
-    .cur{display:none!important}
-    .cur__ring{width:20px;height:20px;margin:-19px 0 0 -19px;border-radius:50%;border:1px solid rgba(232,207,174,.6);
-      transition:width .35s cubic-bezier(.22,1,.36,1),height .35s cubic-bezier(.22,1,.36,1),margin .35s cubic-bezier(.22,1,.36,1),background .35s ease,border-color .35s ease,opacity .3s ease}
-    .cur__ring.is-hover{width:40px;height:40px;margin:-35px 0 0 -35px;background:rgba(232,207,174,.12);border-color:rgba(232,207,174,.9)}
-    .cur__ring.is-down{width:28px;height:28px;margin:-14px 0 0 -14px}
-    .cur.is-hide,.cur__ring.is-hide{opacity:0}
-  }
+  /* ── cursor: identical to the main site (glass square + gold ribbon) ── */
+  .cur,.cur__ring,.cur__tail,.cur__sq,.cur__trail{display:none!important}
 </style>
 <style>
   /* hide every scrollbar (scrolling still works) */
   html, body, * { scrollbar-width: none !important; -ms-overflow-style: none !important; }
   html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
 </style>
+<style>.eth__soon{grid-column:1/-1;margin:8vh 0 0;font-family:var(--serif);font-size:clamp(28px,3vw,46px);line-height:1.15;color:var(--white)}.eth__soon span{display:block;margin-top:16px;font-family:inherit;font-size:16px;line-height:1.6;opacity:.75}.eth__soon a{color:inherit;border-bottom:1px solid currentColor}</style>
 </head>
 <body>
 <div class="pl" id="pl" aria-hidden="true">
@@ -149,6 +177,7 @@
   <div class="pl__pct" id="plPct">0%</div>
 </div>
 <div class="cur" id="cur"></div><div class="cur__ring" id="curRing"></div>
+
 <section class="eth" id="eth" aria-label="Ethnic wear collection">
   <div class="eth__bg on" data-layer></div>
   <div class="eth__bg" data-layer></div>
@@ -162,7 +191,7 @@
 
   <div class="eth__info">
     <div class="eth__eye">Ethnic collection</div>
-    <div class="eth__count"><b id="ethNum">01</b> <span>/ 06</span></div>
+    <div class="eth__count"><b id="ethNum">01</b> <span>/ 05</span></div>
     <p class="eth__desc" id="ethDesc"></p>
   </div>
 
@@ -177,6 +206,19 @@
   </aside>
 </section>
 
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Outfit photos" aria-hidden="true">
+  <div class="lb__stage">
+    <button class="lb__arrow --prev" id="lbPrev" type="button" aria-label="Previous photo">←</button>
+    <img class="lb__img" id="lbImg" src="" alt="">
+    <button class="lb__arrow --next" id="lbNext" type="button" aria-label="Next photo">→</button>
+  </div>
+  <div class="lb__bar">
+    <div class="lb__info"><span class="lb__count" id="lbCount"></span><h3 class="lb__name" id="lbName"></h3></div>
+    <div class="lb__thumbs" id="lbThumbs"></div>
+    <a class="lb__book" href="./index.html#contact">Book a fitting</a>
+  </div>
+  <button class="lb__close" id="lbClose" type="button" aria-label="Close">✕</button>
+</div>
 <script>
 (function () {
   /* ───── EDIT YOUR CONTENT HERE ─────
@@ -184,23 +226,38 @@
      items: the 4 products shown after "Know more" (name + photo) */
   var DATA = [
     { id:'kurtas', title:'Kurtas', desc:'Easy, elegant and cut to you. From everyday linen to festive silk.',
-      bg:'https://cdn.21st.dev/assets/mirror/b2/b26ed9367c41626c7e61d837f0ea11cdaa3148a499e6bee171176886c8959950.jpg',
-      items:[['Ivory Chikankari Kurta','./images/hero_sherwani.webp'],['Linen Pathani Kurta','./images/c_suit.webp'],['Silk Festive Kurta','./images/c_sherwani.webp'],['Asymmetric Kurta Set','./images/rotate.webp']] },
+      bg:'./images/ethnic/bg/kurtas.webp', pos:'66% center',
+      items:[
+        ['Kurta No. 01', ['./images/ethnic/kurtas/kurta%201a.webp','./images/ethnic/kurtas/kurta%201b.webp']],
+        ['Kurta No. 02', ['./images/ethnic/kurtas/kurta%202a.webp','./images/ethnic/kurtas/kurta%202b.webp']],
+        ['Kurta No. 03', ['./images/ethnic/kurtas/kurta%203a.webp','./images/ethnic/kurtas/kurta%203b.webp']],
+        ['Kurta No. 04', ['./images/ethnic/kurtas/kurta%204a.webp','./images/ethnic/kurtas/kurta%204b.webp']],
+        ['Kurta No. 05', ['./images/ethnic/kurtas/kurta%205a.webp','./images/ethnic/kurtas/kurta%205b.webp']],
+        ['Kurta No. 06', ['./images/ethnic/kurtas/kurta%206a.webp','./images/ethnic/kurtas/kurta%206b.webp','./images/ethnic/kurtas/kurta%206c.webp']],
+        ['Kurta No. 07', ['./images/ethnic/kurtas/kurta%207a.webp','./images/ethnic/kurtas/kurta%207b.webp','./images/ethnic/kurtas/kurta%207c.webp']]
+      ] },
     { id:'sherwanis', title:'Sherwanis', desc:'Zardozi, aari and resham work on silk and brocade, made for the day itself.',
-      bg:'https://cdn.21st.dev/assets/mirror/40/4028a63d1229ffb5d2eccc4c4f7640858afb1bbf639fc41b9a86a376a1202555.jpg',
-      items:[['Gold Zardozi Sherwani','./images/c_sherwani.webp'],['Ivory Raw-Silk Sherwani','./images/hero_sherwani.webp'],['Maroon Velvet Sherwani','./images/bride_red.webp'],['Pastel Embroidered Sherwani','./images/lace.webp']] },
-    { id:'jodhpuris', title:'Jodhpuris', desc:'The royal cut. A sharp closed collar with a tailored, regal line.',
-      bg:'https://cdn.21st.dev/assets/mirror/e6/e65a4e822aa4606715518071f6d85d2066b721b8e7e952e8ab6c051e87bc7a36.jpg',
-      items:[['Black Tie Jodhpuri','./images/c_tux.webp'],['Navy Jodhpuri Suit','./images/f_navy.webp'],['Ivory Wedding Jodhpuri','./images/hero_sherwani.webp'],['Wine Velvet Jodhpuri','./images/f_satin.webp']] },
+      bg:'./images/ethnic/bg/sherwanis.webp', pos:'61% center',
+      items:[
+        ['Sherwani No. 01', ['./images/ethnic/sherwanis/sherwani%201a.webp','./images/ethnic/sherwanis/sherwani%201b.webp','./images/ethnic/sherwanis/sherwani%201c.webp']],
+        ['Sherwani No. 02', ['./images/ethnic/sherwanis/sherwani%202a.webp','./images/ethnic/sherwanis/sherwani%202b.webp','./images/ethnic/sherwanis/sherwani%202c.webp']],
+        ['Sherwani No. 03', ['./images/ethnic/sherwanis/sherwani%203a.webp','./images/ethnic/sherwanis/sherwani%203b.webp','./images/ethnic/sherwanis/sherwani%203c.webp']],
+        ['Sherwani No. 04', ['./images/ethnic/sherwanis/sherwani%204a.webp','./images/ethnic/sherwanis/sherwani%204b.webp','./images/ethnic/sherwanis/sherwani%204c.webp']]
+      ] },
     { id:'modi-coats', title:'Modi Coats', desc:'A sleeveless layer that lifts any kurta, from office to celebration.',
-      bg:'https://cdn.21st.dev/assets/mirror/87/87882922b01fff1934486f69e7ee39a5a5e05bf2b935bb03a916234be898ee0e.jpg',
-      items:[['Linen Modi Coat','./images/chalk.webp'],['Jacquard Modi Coat','./images/c_sherwani.webp'],['Textured Wool Modi Coat','./images/f_navy.webp'],['Silk Brocade Modi Coat','./images/f_silk.webp']] },
+      bg:'', soon:true, items:[] },
     { id:'bandhgalas', title:'Bandhgalas', desc:'Indian formal at its finest. Structured, minimal and quietly grand.',
-      bg:'https://cdn.21st.dev/assets/mirror/99/99ee55fd55281f879bd8cf899e4cb967a99a142d6b571765e46a88ad619ee9de.jpg',
-      items:[['Midnight Bandhgala','./images/rotate.webp'],['Ivory Bandhgala','./images/hero_sherwani.webp'],['Textured Grey Bandhgala','./images/c_suit.webp'],['Embroidered Bandhgala','./images/c_sherwani.webp']] },
+      bg:'./images/ethnic/bg/bandhgalas.webp', pos:'72% center',
+      items:[
+        ['Bandhgala No. 01', ['./images/ethnic/bandhgalas/bandhgala%201a.webp','./images/ethnic/bandhgalas/bandhgala%201b.webp','./images/ethnic/bandhgalas/bandhgala%201c.webp','./images/ethnic/bandhgalas/bandhgala%201d.webp']],
+        ['Bandhgala No. 02', ['./images/ethnic/bandhgalas/bandhgala%202a.webp','./images/ethnic/bandhgalas/bandhgala%202b.webp','./images/ethnic/bandhgalas/bandhgala%202c.webp']],
+        ['Bandhgala No. 03', ['./images/ethnic/bandhgalas/bandhgala%203a.webp','./images/ethnic/bandhgalas/bandhgala%203b.webp','./images/ethnic/bandhgalas/bandhgala%203c.webp']],
+        ['Bandhgala No. 04', ['./images/ethnic/bandhgalas/bandhgala%204a.webp','./images/ethnic/bandhgalas/bandhgala%204b.webp','./images/ethnic/bandhgalas/bandhgala%204c.webp']],
+        ['Bandhgala No. 05', ['./images/ethnic/bandhgalas/bandhgala%205a.webp','./images/ethnic/bandhgalas/bandhgala%205b.webp','./images/ethnic/bandhgalas/bandhgala%205c.webp']],
+        ['Bandhgala No. 06', ['./images/ethnic/bandhgalas/bandhgala%206a.webp','./images/ethnic/bandhgalas/bandhgala%206b.webp','./images/ethnic/bandhgalas/bandhgala%206c.webp']]
+      ] },
     { id:'indo-western', title:'Indo-Western', desc:'Tradition, recut. Drapes, capes and modern silhouettes for the new function.',
-      bg:'https://cdn.21st.dev/assets/mirror/24/24ae667023524d2b6621597f09bf7062c9eadf03fe98d0f2c741637ede1131fc.jpg',
-      items:[['Draped Indo-Western Set','./images/c_tux.webp'],['Asymmetric Jacket Set','./images/rotate.webp'],['Cape Kurta Set','./images/lace.webp'],['Structured Achkan','./images/c_sherwani.webp']] }
+      bg:'', soon:true, items:[] }
   ];
 
   var stage = document.getElementById('eth');
@@ -214,7 +271,7 @@
   var current = -1, front = 0, openIdx = -1;
 
   // preload backgrounds
-  DATA.forEach(function (d) { var im = new Image(); im.src = d.bg; });
+  DATA.forEach(function (d) { if (d.bg) { var im = new Image(); im.src = d.bg; } });
 
   // build the title list
   DATA.forEach(function (d, i) {
@@ -242,23 +299,82 @@
       li.querySelector('.eth__more').tabIndex = k === i ? 0 : -1;
     });
     var back = layers[1 - front];
-    back.style.backgroundImage = 'url("' + DATA[i].bg + '")';
+    back.style.backgroundImage = DATA[i].bg ? 'url("' + DATA[i].bg + '")' : 'radial-gradient(120% 90% at 70% 40%, #3a2a1f 0%, #120c08 70%)'; back.style.backgroundPosition = DATA[i].pos || '';
     back.classList.add('on'); layers[front].classList.remove('on'); front = 1 - front;
     num.textContent = ('0' + (i + 1)).slice(-2);
     desc.style.opacity = 0;
-    setTimeout(function () { desc.textContent = DATA[i].desc; desc.style.opacity = 1; }, 250);
+    setTimeout(function () { desc.textContent = DATA[i].soon ? 'Catalogue coming soon. ' + DATA[i].desc : DATA[i].desc; desc.style.opacity = 1; }, 250);
   }
 
   function fill(i) {
     var d = DATA[i];
     pTitle.textContent = d.title;
+    if (d.soon) { grid.innerHTML = '<p class="eth__soon">Catalogue coming soon.<br><span>Every ' + d.title.replace(/s$/, '').toLowerCase() + ' is still made to order. <a href="./index.html#contact">Book a sitting</a> to have yours cut.</span></p>'; void grid.offsetWidth; grid.classList.add('show'); return; }
     grid.innerHTML = d.items.map(function (it, k) {
-      return '<a class="eth__card" href="./index.html#contact" style="--i:' + k + '">' +
-             '<figure><img src="' + it[1] + '" alt="' + it[0] + '" loading="lazy"></figure><hr><h3>' + it[0] + '</h3></a>';
+      var pics = Array.isArray(it[1]) ? it[1] : [it[1]];
+      var imgs = pics.map(function (src, j) {
+        return '<img src="' + src + '" alt="' + it[0] + (pics.length > 1 ? ', view ' + (j + 1) : '') + '"' + (j ? ' loading="lazy"' : '') + '>';
+      }).join('');
+      return '<a class="eth__card" href="#" style="--i:' + k + '" data-k="' + k + '">' +
+             '<figure><div class="eth__slides">' + imgs + '</div></figure><hr><h3>' + it[0] + '</h3></a>';
     }).join('');
+    setupSlides(d);
     void grid.offsetWidth;
     grid.classList.add('show');
   }
+  function setupSlides(d) {
+    grid.querySelectorAll('.eth__card').forEach(function (card) {
+      var k = +card.dataset.k;
+      var track = card.querySelector('.eth__slides');
+      var n = track.children.length, cur = 0, timer = null;
+      function go(x) { cur = (x + n) % n; track.style.transform = 'translateX(' + (-cur * 100) + '%)'; }
+      if (n > 1) {
+        card.addEventListener('mouseenter', function () { clearInterval(timer); go(cur + 1); timer = setInterval(function () { go(cur + 1); }, 1500); });
+        card.addEventListener('mouseleave', function () { clearInterval(timer); go(0); });
+      }
+      card.addEventListener('click', function (e) {
+        e.preventDefault();
+        clearInterval(timer);
+        var it = d.items[k];
+        lbOpen(it[0], Array.isArray(it[1]) ? it[1] : [it[1]], n > 1 ? cur : 0);
+      });
+    });
+  }
+
+  /* ── lightbox: big view of one outfit ── */
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lbImg'), lbName = document.getElementById('lbName'),
+      lbCount = document.getElementById('lbCount'), lbThumbs = document.getElementById('lbThumbs'), lbPics = [], lbCur = 0;
+  function lbShow(x) {
+    lbCur = (x + lbPics.length) % lbPics.length;
+    lbImg.classList.remove('in'); void lbImg.offsetWidth;
+    lbImg.src = lbPics[lbCur]; lbImg.alt = lbName.textContent + ', view ' + (lbCur + 1);
+    lbImg.classList.add('in');
+    lbCount.textContent = lbPics.length > 1 ? (lbCur + 1) + ' / ' + lbPics.length : '';
+    Array.prototype.forEach.call(lbThumbs.children, function (t, j) { t.classList.toggle('on', j === lbCur); });
+  }
+  function lbOpen(name, pics, start) {
+    lbPics = pics; lbName.textContent = name;
+    lb.classList.toggle('one', pics.length < 2);
+    lbThumbs.innerHTML = pics.map(function (src, j) { return '<button type="button" aria-label="View ' + (j + 1) + '"><img src="' + src + '" alt=""></button>'; }).join('');
+    Array.prototype.forEach.call(lbThumbs.children, function (t, j) { t.addEventListener('click', function () { lbShow(j); }); });
+    lbShow(start || 0);
+    lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+  }
+  function lbClose() { lb.classList.remove('open'); lb.setAttribute('aria-hidden', 'true'); }
+  document.getElementById('lbClose').addEventListener('click', lbClose);
+  document.getElementById('lbPrev').addEventListener('click', function () { lbShow(lbCur - 1); });
+  document.getElementById('lbNext').addEventListener('click', function () { lbShow(lbCur + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb || e.target.classList.contains('lb__stage')) lbClose(); });
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Escape') { e.stopImmediatePropagation(); lbClose(); }
+    if (e.key === 'ArrowRight') lbShow(lbCur + 1);
+    if (e.key === 'ArrowLeft') lbShow(lbCur - 1);
+  }, true);
+  var lbX = 0;
+  lb.addEventListener('touchstart', function (e) { lbX = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) { var dx = e.changedTouches[0].clientX - lbX; if (Math.abs(dx) > 40) lbShow(lbCur + (dx < 0 ? 1 : -1)); }, { passive: true });
+
   function open(i) {
     activate(i);
     if (i === openIdx) return;
@@ -315,25 +431,84 @@
   })();
 })();
 
-/* custom cursor: dot + trailing ring that grows over links and buttons */
+/* cursor: copied from the main site's bundle (assets/index-D-OxojQX.js), home colours */
 (function () {
-  if (!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
-  var dot = document.getElementById('cur'), ring = document.getElementById('curRing');
-  var x = innerWidth / 2, y = innerHeight / 2, rx = x, ry = y;
-  addEventListener('mousemove', function (e) {
-    x = e.clientX; y = e.clientY;
-    dot.style.transform = 'translate(' + x + 'px,' + y + 'px)';
-    dot.classList.remove('is-hide'); ring.classList.remove('is-hide');
-  });
-  document.addEventListener('mouseleave', function () { dot.classList.add('is-hide'); ring.classList.add('is-hide'); });
-  addEventListener('mousedown', function () { ring.classList.add('is-down'); });
-  addEventListener('mouseup', function () { ring.classList.remove('is-down'); });
-  document.addEventListener('mouseover', function (e) { ring.classList.toggle('is-hover', !!e.target.closest('a,button')); });
-  (function loop() {
-    rx += (x - rx) * 0.18; ry += (y - ry) * 0.18;
-    ring.style.transform = 'translate(' + rx + 'px,' + ry + 'px)';
-    requestAnimationFrame(loop);
-  })();
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches || matchMedia('(hover: none)').matches) return;
+  var COLORS = ['#ffebd6', '#dcb994', '#d0a477'];
+  var wt = { length: 10, width: 5, follow: .32, drag: .34, wave: 0, waveSpeed: 0, fadeAfter: 1400, zIndex: 50 };
+
+  var e = document.createElement('canvas');
+  e.setAttribute('aria-hidden', 'true');
+  e.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:' + wt.zIndex;
+  document.body.appendChild(e);
+  var i = document.createElement('div');
+  i.className = 'glass-cursor'; i.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(i);
+  var st = document.createElement('style');
+  st.textContent =
+    'html,body,a,button,input,select,label,[role=button]{cursor:none!important}' +
+    '.glass-cursor{position:fixed;left:0;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:2px;pointer-events:none;z-index:' + (wt.zIndex + 1) + ';' +
+    'opacity:0;transition:opacity .3s,width .3s,height .3s,margin .3s;background:none!important;border:1.5px solid #fff!important;mix-blend-mode:difference}' +
+    '.glass-cursor.on{opacity:1}' +
+    '.glass-cursor.big{width:26px;height:26px;margin:-13px 0 0 -13px}';
+  document.head.appendChild(st);
+
+  /* keep the cursor above everything (same trick as the main site) */
+  e.popover = 'manual'; i.popover = 'manual';
+  Object.assign(e.style, { margin: '0', border: '0', padding: '0', background: 'transparent', overflow: 'visible' });
+  Object.assign(i.style, { padding: '0', right: 'auto', bottom: 'auto', overflow: 'visible' });
+  function top() { [e, i].forEach(function (M) { try { M.hidePopover && M.hidePopover(); M.showPopover && M.showPopover(); } catch (x) {} }); }
+  top();
+  new MutationObserver(function () { if (document.querySelector('.lb.open, .eth.is-open')) top(); }).observe(document.body, { subtree: true, attributes: true, attributeFilter: ['class'] });
+
+  var o = e.getContext('2d'), a = 0, l = 0, c = 1;
+  function size() { c = Math.min(window.devicePixelRatio || 1, 2); a = innerWidth; l = innerHeight; e.width = a * c; e.height = l * c; o.setTransform(c, 0, 0, c, 0, 0); }
+  size();
+  var f = Array.from({ length: wt.length }, function () { return { x: 0, y: 0 }; }), u = { x: 0, y: 0, ready: false };
+  var g = 0, d = 0, m = 0, alpha = 0, speed = 0;
+
+  function loop(M) {
+    g = 0;
+    var R = Math.min((M - d) / 1e3, 1 / 30) || 1 / 60; d = M;
+    var O = function (A) { return 1 - Math.pow(1 - A, R * 60); }, I = f[0].x, q = f[0].y;
+    f[0].x += (u.x - f[0].x) * O(wt.follow); f[0].y += (u.y - f[0].y) * O(wt.follow);
+    for (var A = 1; A < f.length; A++) { f[A].x += (f[A - 1].x - f[A].x) * O(wt.drag); f[A].y += (f[A - 1].y - f[A].y) * O(wt.drag); }
+    var S = Math.hypot(f[0].x - I, f[0].y - q);
+    speed += (Math.min(S / 18, 1) - speed) * O(.15);
+    var E = M - m > wt.fadeAfter ? 0 : 1;
+    alpha += (E - alpha) * O(E ? .3 : .08);
+    o.clearRect(0, 0, a, l);
+    if (alpha > .01) draw(M);
+    if (alpha > .01 || E) g = requestAnimationFrame(loop);
+  }
+  function draw(M) {
+    var R = f.length, L = [], Rt = [];
+    for (var E = 0; E < R; E++) {
+      var A = f[Math.max(E - 1, 0)], V = f[Math.min(E + 1, R - 1)];
+      var J = -(V.y - A.y), ut = V.x - A.x, Me = Math.hypot(J, ut) || 1; J /= Me; ut /= Me;
+      var vt = E / (R - 1), St = Math.sin(M * wt.waveSpeed - E * .45) * wt.wave * vt * (.35 + speed);
+      var x = f[E].x + J * St, y = f[E].y + ut * St, w = wt.width * (.25 + speed * .75) * Math.pow(1 - vt, .9) / 2;
+      L.push([x + J * w, y + ut * w]); Rt.push([x - J * w, y - ut * w]);
+    }
+    var q = f[0], S = f[R - 1], P = o.createLinearGradient(q.x, q.y, S.x + .01, S.y + .01);
+    COLORS.forEach(function (col, k) { P.addColorStop(COLORS.length === 1 ? 0 : k / (COLORS.length - 1), col); });
+    o.globalAlpha = alpha; o.fillStyle = P; o.beginPath(); o.moveTo(L[0][0], L[0][1]);
+    for (var k = 1; k < R; k++) o.lineTo(L[k][0], L[k][1]);
+    for (k = R - 1; k >= 0; k--) o.lineTo(Rt[k][0], Rt[k][1]);
+    o.closePath(); o.fill(); o.globalAlpha = 1;
+  }
+  function wake() { m = performance.now(); if (!g) { d = performance.now(); g = requestAnimationFrame(loop); } }
+  addEventListener('pointermove', function (M) {
+    if (M.pointerType === 'touch') return;
+    u.x = M.clientX; u.y = M.clientY;
+    i.style.transform = 'translate3d(' + M.clientX + 'px,' + M.clientY + 'px,0)';
+    i.classList.add('on');
+    i.classList.toggle('big', !!(M.target.closest && M.target.closest('a,button,[data-view],.tab')));
+    if (!u.ready) { u.ready = true; f.forEach(function (p) { p.x = u.x; p.y = u.y; }); }
+    wake();
+  }, { passive: true });
+  addEventListener('resize', size);
+  document.documentElement.addEventListener('pointerleave', function () { m = 0; i.classList.remove('on'); });
 })();
 </script>
 <!-- ═══ WhatsApp floating button ═══ -->
@@ -354,7 +529,6 @@
   .wa:hover .wa__txt,.wa:focus-visible .wa__txt{max-width:220px;opacity:1;padding-right:24px}
   .wa:hover .wa__ic{transform:rotate(-10deg) scale(1.06)}
   .wa__pulse{position:absolute;left:0;top:0;width:58px;height:58px;border-radius:50%;border:1px solid rgba(232,207,174,.55);pointer-events:none;animation:waPulse 2.6s ease-out 3.6s infinite;opacity:0}
-  .wa:hover .wa__pulse{display:none}
   @keyframes waIn{to{opacity:1;transform:none}}
   @keyframes waShine{0%{background-position:0% 50%}100%{background-position:220% 50%}}
   @keyframes waPulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}

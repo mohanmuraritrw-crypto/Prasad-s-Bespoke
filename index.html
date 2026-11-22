@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Prasads Bespoke | Bespoke Suits & Bridal Couture</title>
-  <meta name="description" content="Prasads Bespoke is a bespoke house for hand-cut suits, wedding gowns, lehengas and Ethnic Wear, made entirely to your measure.">
+  <title>Prasad's Bespoke | Bespoke Suits & Ethnic Wear, Secunderabad</title>
+  <meta name="description" content="Prasad's Bespoke is a men's bespoke tailoring house in Secunderabad, Hyderabad. Hand-cut suits, sherwanis, bandhgalas and kurtas, made entirely to your measure.">
   <meta property="og:title" content="Prasads Bespoke">
-  <meta property="og:description" content="Bespoke suits and bridal couture, cut by hand and fitted to you.">
-  <meta property="og:image" content="./images/hero_gown.webp">
+  <meta property="og:description" content="Bespoke suits and ethnic wear for men, cut by hand and fitted to you in Secunderabad.">
+  <meta property="og:image" content="./images/suits/navy-chalk-db-1.webp">
   <meta name="theme-color" content="#0c0804">
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,13 +42,6 @@
 
 </style>
 <style>
-  .lswap{display:inline-flex;position:relative;overflow:hidden;vertical-align:top}
-  .lswap__c{position:relative;display:inline-block;white-space:pre}
-  .lswap__a,.lswap__b{display:inline-block;transition:transform .6s cubic-bezier(.3,1.35,.5,1);transition-delay:calc(var(--d) * 30ms)}
-  .lswap__b{position:absolute;left:0;top:0;transform:translateY(-100%)}
-  .lswap.is-on .lswap__a{transform:translateY(100%)}
-  .lswap.is-on .lswap__b{transform:translateY(0)}
-  .lswap.is-reset .lswap__a,.lswap.is-reset .lswap__b{transition:none!important}
 </style>
 <style>
   /* hide the arch line */
@@ -151,23 +144,6 @@
   .header.is-top .burger i{background:#ffffff!important}
   .header:not(.is-top) .hdr-brand__name,.header:not(.is-top) .hdr-brand__sub{background:linear-gradient(100deg,#b8875a 0%,#d9b48a 45%,#a8784c 100%);-webkit-background-clip:text;background-clip:text;color:transparent!important;-webkit-text-fill-color:transparent}
   </style>
-
-  <style>
-  /* hero slideshow: phones only */
-  .hero__dots{display:none}
-  @media (max-width:760px){
-    .hero{position:relative!important;display:block!important;height:100svh!important;min-height:560px;overflow:hidden}
-    .hero__panel{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;flex:none!important;clip-path:none!important;transform:none!important;opacity:0;visibility:hidden;z-index:0;transition:opacity 1.2s ease,visibility 0s linear 1.2s}
-    .hero__panel.is-active{opacity:1;visibility:visible;z-index:1;transition:opacity 1.2s ease}
-    .hero__panel img{width:100%!important;height:100%!important;object-fit:cover!important;transform:scale(1.08);transition:transform 6s ease}
-    .hero__panel.is-active img{transform:scale(1)}
-    .hero__cap{font-size:14px!important;letter-spacing:.14em!important}
-    .hero__cta{position:relative;z-index:3}
-    .hero__dots{display:flex;gap:8px;position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:3}
-    .hero__dots button{width:7px;height:7px;padding:0;border:0;border-radius:4px;background:rgba(255,255,255,.45);transition:width .3s ease,background .3s ease}
-    .hero__dots button.on{width:22px;background:#e8cfae}
-  }
-</style>
 <style>
   /* wheel date picker */
   .wheel{--h:40px;position:relative;display:grid;grid-template-columns:.8fr 1.6fr 1fr;gap:8px;height:calc(var(--h) * 5);margin-top:8px;user-select:none;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 32%,#000 68%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 32%,#000 68%,transparent 100%)}
@@ -275,6 +251,167 @@
   html, body, * { scrollbar-width: none !important; -ms-overflow-style: none !important; }
   html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
 </style>
+<style>
+/* ── Bespoke Suits catalogue (replaces the old suits page sections) ── */
+#page-suits{background:#f5f3ef}
+#page-suits .cbar{background:var(--night);margin-bottom:0}
+.scat{color:#3a3330;padding:clamp(28px,4vw,48px) clamp(12px,2vw,28px) clamp(60px,8vw,110px);font-family:var(--f-body)}
+.scat__title{font-family:var(--f-body);font-weight:400;font-size:clamp(15px,1.3vw,18px);letter-spacing:.08em;text-align:center;margin:0 0 clamp(26px,3vw,40px);color:#5a4f49}
+.scat__intro{max-width:980px;margin:0 auto clamp(20px,2.4vw,30px);text-align:center;font-size:clamp(13px,1vw,15px);line-height:1.7;color:#4a423d}
+.scat__banner{position:sticky;top:76px;z-index:0;margin-left:calc(-1*clamp(12px,2vw,28px));margin-right:calc(-1*clamp(12px,2vw,28px));height:min(36vw,55vh);overflow:hidden;background:#e7e2db}
+.scat__body{position:relative;z-index:1;background:#f5f3ef;margin:0 calc(-1*clamp(12px,2vw,28px));padding:1px clamp(12px,2vw,28px) 0;box-shadow:0 -18px 40px #00000014}
+.scat__banner img{width:100%;height:100%;object-fit:cover;display:block}
+.scat__bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:16px;margin:clamp(20px,2.5vw,32px) 0 clamp(26px,3vw,40px);padding:16px clamp(8px,2vw,28px);border-top:1px solid #d9d2c9;border-bottom:1px solid #d9d2c9;font-size:12.5px;color:#5a4f49}
+.scat__count b{font-weight:400}
+.scat__filter{position:relative;justify-self:center}
+.scat__fbtn{display:inline-flex;align-items:center;gap:7px;background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:4px 6px}
+.scat__fpanel{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%);z-index:5;display:flex;gap:6px;padding:10px;background:#fff;border:1px solid #e2dbd2;box-shadow:0 10px 30px #0000001a;white-space:nowrap}
+.scat__fpanel[hidden]{display:none}
+.scat__fpanel button{background:none;border:1px solid #d9d2c9;color:#4a423d;font:inherit;font-size:12px;padding:7px 14px;cursor:pointer;transition:background .25s,color .25s}
+.scat__fpanel button.is-on,.scat__fpanel button:hover{background:#3a3330;color:#f5f3ef;border-color:#3a3330}
+.scat__opts{justify-self:end;display:flex;gap:22px}
+.scat__opts label{display:inline-flex;align-items:center;gap:6px}
+.scat__opts select{appearance:none;-webkit-appearance:none;background:transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%235a4f49' stroke-width='1.1'/%3E%3C/svg%3E") no-repeat right center/9px;border:0;color:inherit;font:inherit;padding:2px 16px 2px 2px;cursor:pointer}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.scat__grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,3vw,44px) clamp(14px,2vw,28px)}
+.scat__item{display:flex;flex-direction:column;align-items:center;text-align:center}
+.scat__item[hidden]{display:none}
+.scat__pic{position:relative;display:block;width:100%;aspect-ratio:4/5;overflow:hidden;background:#e7e2db}
+.scat__pic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.scat__pic:hover img{transform:scale(1.04)}
+.scat__media{position:relative;width:100%}
+.scat__pic .scat__img{position:absolute;inset:0;opacity:0;transition:opacity .7s ease,transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.scat__pic .scat__img.is-on{opacity:1}
+.scat__pic .scat__img:first-child{position:relative}
+.scat__dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+.scat__dot{width:7px;height:7px;padding:0;border-radius:50%;border:1px solid #8c8079;background:transparent;cursor:pointer;transition:background .3s}
+.scat__dot.is-on{background:#3a3330;border-color:#3a3330}
+.scat__name{font-family:var(--f-body);font-weight:400;font-size:clamp(13px,1vw,15px);letter-spacing:.04em;margin:clamp(18px,2vw,26px) 0 0;color:#4a423d}
+.scat__name:after{content:"";display:block;width:26px;height:1px;background:#b69a7c;margin:12px auto 0}
+.scat__btn{display:block;width:100%;margin-top:clamp(16px,1.8vw,22px);padding:13px 10px;border:1px solid #8c8079;color:#3a3330;font-size:12.5px;letter-spacing:.03em;transition:background .3s,color .3s}
+.scat__btn:hover{background:#3a3330;color:#f5f3ef}
+.scat__empty{text-align:center;color:#7a6f68;margin:40px 0}
+@media (max-width:900px){.scat__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.scat__bar{grid-template-columns:1fr 1fr;row-gap:12px}.scat__filter{justify-self:end}.scat__opts{grid-column:1/-1;justify-self:stretch;justify-content:space-between}.scat__fpanel{left:auto;right:0;transform:none}}
+</style>
+<style>
+/* ═══ Home page additions ═══ */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* split hero */
+.hero.hero--split{display:flex!important;height:100svh;min-height:560px;background:var(--night);overflow:hidden}
+.hs__side{position:relative;flex:1 1 50%;overflow:hidden;display:block;color:#fff;transition:flex-grow .9s cubic-bezier(.2,.7,.2,1)}
+.hs__side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 1.6s cubic-bezier(.2,.7,.2,1),filter .9s}
+.hs__side:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0006 0%,#0000 30%,#0000 55%,#000a 100%);transition:background .9s}
+.hs__txt{position:absolute;z-index:2;left:0;right:0;bottom:clamp(48px,9vh,96px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:12px}
+.hs__eye{font-family:var(--f-wide);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--sand);opacity:.85}
+.hs__name{font-family:var(--f-display);text-transform:uppercase;font-size:clamp(40px,6vw,92px);line-height:.9;letter-spacing:-.01em;color:#fff}
+.hs__cta{margin-top:10px;display:inline-flex;align-items:center;height:44px;padding:0 26px;border:.8px solid #fff9;border-radius:100px;font-family:var(--f-wide);font-size:11px;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:opacity .6s,transform .6s,background .4s,color .4s}
+@media (hover:hover) and (min-width:761px){
+  .hero--split:hover .hs__side{flex-grow:.7}
+  .hero--split .hs__side:hover{flex-grow:1.3}
+  .hs__side:hover img{transform:scale(1)}
+  .hero--split:hover .hs__side:not(:hover) img{filter:brightness(.55)}
+  .hs__side:hover .hs__cta{opacity:1;transform:none}
+  .hs__cta:hover{background:#fff;color:#111}
+}
+@media (max-width:760px){
+  .hero.hero--split{flex-direction:column}
+  .hs__side{flex:1 1 50%}
+  .hs__txt{bottom:28px;gap:8px}
+  .hs__cta{opacity:1;transform:none;height:38px;font-size:10px}
+}
+/* shared section styles */
+.hx{padding:clamp(72px,10vw,140px) clamp(16px,4vw,56px);text-align:center}
+.hx--dark{background:var(--night);color:var(--tx)}
+.hx--cream{background:var(--cream);color:#2e2622}
+.hx__eye{font-family:var(--f-wide);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--tan);margin:0 0 18px}
+.hx__title{font-family:var(--f-display);font-weight:400;text-transform:uppercase;font-size:clamp(34px,5vw,72px);line-height:.95;letter-spacing:-.01em;margin:0 0 clamp(36px,5vw,64px)}
+.hx--dark .hx__title{color:var(--sand)}
+.hx__title a{color:inherit}
+.hx-in{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1.2s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0) * .12s)}
+.hx-in.is-in{opacity:1;transform:none}
+/* collections */
+.hcol__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.6vw,24px);max-width:1400px;margin:0 auto}
+.hcol__card{position:relative;display:block;aspect-ratio:3/4.4;overflow:hidden;color:#fff}
+.hcol__card img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.hcol__card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 50%,#000b)}
+.hcol__card:hover img{transform:scale(1.06)}
+.hcol__name{position:absolute;z-index:1;left:24px;right:24px;bottom:24px;display:flex;justify-content:space-between;align-items:center;font-family:var(--f-display);text-transform:uppercase;font-size:clamp(24px,2.4vw,36px);text-align:left}
+.hcol__name i{font-style:normal;font-family:var(--f-body);font-size:22px;transition:transform .5s}
+.hcol__card:hover .hcol__name i{transform:translateX(6px)}
+/* signature carousel */
+.hsig{text-align:left}
+.hsig__head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;max-width:1400px;margin:0 auto clamp(30px,4vw,48px)}
+.hsig .hx__title{margin:0}
+.hsig__nav{display:flex;gap:10px}
+.hsig__nav button{width:48px;height:48px;border-radius:50%;border:1px solid #2e262255;background:none;color:#2e2622;font-size:18px;cursor:pointer;transition:background .3s,color .3s}
+.hsig__nav button:hover{background:#2e2622;color:var(--cream)}
+.hsig__track{list-style:none;margin:0 calc(-1*clamp(16px,4vw,56px));padding:0 clamp(16px,4vw,56px);display:flex;gap:clamp(14px,1.6vw,24px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+.hsig__track::-webkit-scrollbar{display:none}
+.hsig__track li{flex:0 0 clamp(240px,24vw,360px);scroll-snap-align:start}
+.hsig__track a{display:block;color:inherit}
+.hsig__track img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.hsig__track a:hover img{transform:scale(1.03)}
+.hsig__track span{display:block;margin-top:16px;font-size:15px;letter-spacing:.04em}
+.hsig__track small{display:block;margin-top:4px;font-size:12px;color:#8a7d74}
+/* craft video */
+.hcraft{position:relative;height:min(85vh,820px);min-height:420px;overflow:hidden;background:var(--night)}
+.hcraft__vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:hcraftZoom 22s ease-in-out infinite alternate}
+@keyframes hcraftZoom{from{transform:scale(1)}to{transform:scale(1.08)}}
+.hcraft:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#0000 40%,#000c)}
+.hcraft__txt{position:absolute;z-index:1;left:0;right:0;bottom:clamp(40px,8vh,90px);text-align:center;color:#fff}
+.hcraft__txt .hx__title{margin:0;color:#fff}
+/* occasions */
+.hocc__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,18px);max-width:1400px;margin:0 auto}
+.hocc__card{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;color:#fff}
+.hocc__card img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter .6s;filter:brightness(.8)}
+.hocc__card:hover img{transform:scale(1.06);filter:brightness(1)}
+.hocc__card span{position:absolute;left:0;right:0;bottom:22px;text-align:center;font-family:var(--f-display);text-transform:uppercase;font-size:clamp(22px,2.2vw,32px);text-shadow:0 2px 16px #0008}
+/* fabric library */
+.hfab__strip{overflow:hidden;margin:0 calc(-1*clamp(16px,4vw,56px))}
+.hfab__row{list-style:none;margin:0;padding:0;display:flex;gap:clamp(14px,1.6vw,24px);width:max-content;animation:hfabMove 40s linear infinite}
+.hfab__strip:hover .hfab__row{animation-play-state:paused}
+@keyframes hfabMove{to{transform:translateX(-50%)}}
+.hfab__row li{flex:0 0 clamp(200px,20vw,300px);text-align:left}
+.hfab__row img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.hfab__row span{display:block;margin-top:14px;font-size:14px;letter-spacing:.04em}
+.hfab__row small{display:block;margin-top:3px;font-size:12px;color:#8a7d74}
+/* heritage numbers */
+.hher{background:var(--cocoa);color:var(--sand)}
+.hher__line{max-width:880px;margin:0 auto clamp(40px,5vw,64px);font-family:var(--f-display);text-transform:uppercase;font-size:clamp(24px,3vw,42px);line-height:1.1}
+.hher__nums{list-style:none;margin:0 auto;padding:0;max-width:1200px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.hher__nums li{border-top:1px solid #e5cfb833;padding-top:22px}
+.hher__nums b{display:block;font-family:var(--f-display);font-weight:400;font-size:clamp(40px,5vw,72px);line-height:1;color:var(--gold)}
+.hher__nums span{display:block;margin-top:10px;font-size:13px;letter-spacing:.06em;opacity:.8}
+/* instagram */
+.hig .hx__title{font-size:clamp(26px,3.4vw,48px)}
+.hig__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;max-width:1500px;margin:0 auto}
+.hig__grid a{display:block;aspect-ratio:1/1;overflow:hidden}
+.hig__grid img{width:100%;height:100%;object-fit:cover;transition:transform 1s,opacity .4s}
+.hig__grid a:hover img{transform:scale(1.06);opacity:.85}
+@media (max-width:900px){
+  .hcol__grid{grid-template-columns:1fr;max-width:520px}
+  .hcol__card{aspect-ratio:4/3.4}
+  .hocc__grid{grid-template-columns:repeat(2,1fr)}
+  .hher__nums{grid-template-columns:repeat(2,1fr)}
+  .hig__grid{grid-template-columns:repeat(3,1fr)}
+  .hsig__nav{display:none}
+}
+</style>
+<style>
+/* launch additions */
+.grev{background:var(--cocoa);color:var(--sand);text-align:center;padding:clamp(72px,10vw,140px) clamp(16px,4vw,56px)}
+.grev .hx__title{color:var(--sand)}
+.grev__lead{max-width:560px;margin:-24px auto 36px;font-size:15px;line-height:1.6;opacity:.85}
+.grev__widget{max-width:1200px;margin:0 auto}
+.grev__widget:empty{display:none}
+.grev__btns{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:34px}
+.grev__btn{display:inline-flex;align-items:center;height:48px;padding:0 26px;border-radius:100px;border:.8px solid var(--sand);color:var(--sand);font-family:var(--f-wide);font-size:11px;text-transform:uppercase;letter-spacing:.06em;transition:background .35s,color .35s}
+.grev__btn:hover,.grev__btn.--solid{background:var(--sand);color:var(--cocoa)}
+.grev__btn.--solid:hover{background:transparent;color:var(--sand)}
+.fvisit{margin:0 0 12px;font-size:14px;line-height:1.6;color:rgba(255,255,255,.72)}
+.fvisit a{color:var(--sand)}
+</style>
 </head>
 <body>
 <div class="preloader" id="pre" aria-hidden="true">
@@ -304,10 +441,9 @@
               <ul class="cdrop__sub">
                 <li style="--i:3"><a href="./ethnic.html#kurtas" role="menuitem">Kurtas</a></li>
                 <li style="--i:4"><a href="./ethnic.html#sherwanis" role="menuitem">Sherwanis</a></li>
-                <li style="--i:5"><a href="./ethnic.html#jodhpuris" role="menuitem">Jodhpuris</a></li>
-                <li style="--i:6"><a href="./ethnic.html#modi-coats" role="menuitem">Modi Coats</a></li>
-                <li style="--i:7"><a href="./ethnic.html#bandhgalas" role="menuitem">Bandhgalas</a></li>
-                <li style="--i:8"><a href="./ethnic.html#indo-western" role="menuitem">Indo-Western</a></li>
+                <li style="--i:5"><a href="./ethnic.html#modi-coats" role="menuitem">Modi Coats</a></li>
+                <li style="--i:6"><a href="./ethnic.html#bandhgalas" role="menuitem">Bandhgalas</a></li>
+                <li style="--i:7"><a href="./ethnic.html#indo-western" role="menuitem">Indo-Western</a></li>
               </ul>
             </li>
           </ul>
@@ -319,14 +455,13 @@
         <a href="#top" class="hdr-brand" aria-label="Prasad's Bespoke, home"><span class="hdr-brand__name">PRASAD’S</span><span class="hdr-brand__sub">BESPOKE</span></a>
          <nav class="--r" aria-label="Account">
       <a class="nl" href="#contact">Book a Fitting</a>
-      <a class="nl" href="#contact">Account</a>
     </nav>
     <button class="burger" id="burger" aria-label="Open menu"><i></i><i></i></button>
   </div>
 </header>
 <div class="menu" id="menu">
   <button class="close" id="menuClose">Close</button>
-  <a href="#house" class="t-bronze">The House</a>
+  <a href="#top" class="t-bronze">The House</a>
   <a href="#ateliers" class="t-bronze">Collections</a>
   <a href="#reviews" class="t-bronze">Clients</a>
   <a href="#contact" class="t-bronze">Contact</a>
@@ -336,28 +471,69 @@
 <main id="top">
 
   <!-- ═══ HERO ═══ -->
-  <section class="hero" aria-label="Prasads Bespoke">
-    <a class="hero__panel" href="#/suits" style="--i:0" aria-label="Explore Bespoke Suits"><img src="./images/hero_suit.webp" alt="Senior tailor beside a bespoke suit on a mannequin"><div class="hero__cap">Bespoke Suits<small>Explore</small></div></a>
-       <a class="hero__panel" href="#/suits" data-goto="formals" style="--i:1" aria-label="Explore Formals"><img src="./images/c_tux.webp" alt="Formal shirt and dinner suit"><div class="hero__cap">Formals<small>Explore</small></div></a>
-       <a class="hero__panel" href="./ethnic.html" style="--i:2" aria-label="Explore Ethnic Wear"><img loading="lazy" src="./images/c_sherwani.webp" alt="Gold embroidered designer piece on a hanger"><div class="hero__cap">Ethnic Wear<small>Explore</small></div></a>
-    <h1 class="hero__title" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;margin:-1px">Prasads Bespoke</h1>
-   </section>
+  <section class="hero hero--split" aria-label="Prasads Bespoke">
+    <h1 class="sr-only">Prasads Bespoke</h1>
+    <a class="hs__side" href="#/suits" aria-label="Explore Bespoke Suits">
+      <img src="./images/hero_suit.webp" alt="Senior tailor beside a bespoke suit on a mannequin">
+      <div class="hs__txt"><span class="hs__eye">The Tailoring House</span><span class="hs__name">Bespoke Suits</span><span class="hs__cta">Explore Suits</span></div>
+    </a>
+    <a class="hs__side" href="./ethnic.html" aria-label="Explore Ethnic Wear">
+      <img src="./images/hero_sherwani.webp" alt="Hand embroidered sherwani">
+      <div class="hs__txt"><span class="hs__eye">The Heritage House</span><span class="hs__name">Ethnic Wear</span><span class="hs__cta">Explore Ethnic</span></div>
+    </a>
+  </section>
+
+  <!-- ═══ COLLECTIONS ═══ -->
+  <section class="hx hx--dark hcol" aria-labelledby="hcolTitle">
+    <p class="hx__eye">The Collections</p>
+    <h2 class="hx__title" id="hcolTitle">Three houses, one hand</h2>
+    <div class="hcol__grid">
+      <a class="hcol__card hx-in" href="#/suits"><img loading="lazy" src="./images/c_suit.webp" alt="Bespoke suit"><span class="hcol__name">Bespoke Suits<i>&rarr;</i></span></a>
+      <a class="hcol__card hx-in" href="#/suits" data-goto="formals"><img loading="lazy" src="./images/c_tux.webp" alt="Formal dinner suit"><span class="hcol__name">Formals<i>&rarr;</i></span></a>
+      <a class="hcol__card hx-in" href="./ethnic.html"><img loading="lazy" src="./images/c_sherwani.webp" alt="Embroidered ethnic wear"><span class="hcol__name">Ethnic Wear<i>&rarr;</i></span></a>
+    </div>
+  </section>
 
   <!-- ═══ MISSION ═══ -->
   <section class="mission bg-noise" aria-labelledby="missionTitle">
     <div class="mission__img --a" data-par="-0.12"><img loading="lazy" src="./images/chalk.webp" alt="Tailor marking cloth with chalk and a tape measure"></div>
-    <div class="mission__img --b" data-par="0.1"><img loading="lazy" src="./images/lace.webp" alt="Hands adjusting lace on a wedding gown"></div>
-    <div class="mission__img --c" data-par="-0.06"><img src="./images/hero_sherwani.webp" alt="Ivory designer jacket with hand-finished buttons"></div>
+    <div class="mission__img --b" data-par="0.1"><img loading="lazy" src="./images/suits/navy-chalk-db-2.webp" alt="Navy chalk stripe double-breasted suit, close detail"></div>
+    <div class="mission__img --c" data-par="-0.06"><img src="./images/hero_sherwani.webp" alt="Hand embroidered sherwani"></div>
     <div class="mission__in wrap">
       <div class="eyebrow reveal --fade" data-reveal><span class="line"><span>Mission</span></span></div>
       <h2 class="display t-bronze reveal" id="missionTitle" data-reveal><span class="line"><span>Cut by hand.</span></span><span class="line" style="--i:1"><span>Fitted to you.</span></span><span class="line" style="--i:2"><span>Worn for a lifetime.</span></span></h2>
-      <p class="mission__text">Suits, wedding gowns and Ethnic Wear made entirely to your measure, from the first sketch to the final press.</p>
+      <p class="mission__text">Suits, sherwanis, bandhgalas and kurtas for men, made entirely to your measure, from the first sitting to the final press.</p>
     </div>
   </section>
 
 
   <!-- ═══ ATELIERS ═══ -->
     <!-- ═══ ATELIER JOURNEY (timeline) ═══ -->
+  <!-- ═══ SIGNATURE PIECES ═══ -->
+  <section class="hx hx--cream hsig" aria-labelledby="hsigTitle">
+    <div class="hsig__head">
+      <div><p class="hx__eye">Signature Pieces</p><h2 class="hx__title" id="hsigTitle">From the atelier</h2></div>
+      <div class="hsig__nav"><button type="button" data-dir="-1" aria-label="Previous">&larr;</button><button type="button" data-dir="1" aria-label="Next">&rarr;</button></div>
+    </div>
+    <ul class="hsig__track" id="hsigTrack">
+      <li><a href="#/suits"><img loading="lazy" src="./images/suits/navy-chalk-db-1.webp" alt="Navy Chalk Stripe"><span>Navy Chalk Stripe</span><small>Double-Breasted Suit</small></a></li>
+      <li><a href="#/suits"><img loading="lazy" src="./images/suits/plum-db-1.webp" alt="Plum"><span>Plum</span><small>Double-Breasted Suit</small></a></li>
+      <li><a href="#/suits"><img loading="lazy" src="./images/suits/tobacco-db-1.webp" alt="Tobacco Brown"><span>Tobacco Brown</span><small>Double-Breasted Suit</small></a></li>
+      <li><a href="./ethnic.html#sherwanis"><img loading="lazy" src="./images/ethnic/sherwanis/sherwani%201a.webp" alt="Sherwani No. 01"><span>Sherwani No. 01</span><small>Sherwani</small></a></li>
+      <li><a href="#/suits"><img loading="lazy" src="./images/suits/navy-mono-db-1.webp" alt="Navy Monochrome"><span>Navy Monochrome</span><small>Double-Breasted Suit</small></a></li>
+      <li><a href="./ethnic.html#bandhgalas"><img loading="lazy" src="./images/ethnic/bandhgalas/bandhgala%201a.webp" alt="Bandhgala No. 01"><span>Bandhgala No. 01</span><small>Bandhgala</small></a></li>
+      <li><a href="#/suits"><img loading="lazy" src="./images/suits/navy-check-1.webp" alt="Navy Windowpane Check"><span>Navy Windowpane Check</span><small>Suit</small></a></li>
+      <li><a href="./ethnic.html#kurtas"><img loading="lazy" src="./images/ethnic/kurtas/kurta%201a.webp" alt="Kurta No. 01"><span>Kurta No. 01</span><small>Kurta</small></a></li>
+      <li><a href="#/suits"><img loading="lazy" src="./images/suits/navy-pin-db-1.webp" alt="Navy Pinstripe"><span>Navy Pinstripe</span><small>Double-Breasted Suit</small></a></li>
+    </ul>
+  </section>
+
+  <!-- ═══ CRAFT IN MOTION ═══ -->
+  <section class="hcraft" aria-label="Craft in motion" hidden style="display:none">
+    <video class="hcraft__vid" autoplay muted loop playsinline preload="none" poster="./images/atelier.webp"></video>
+    <div class="hcraft__txt"><p class="hx__eye">Craft in Motion</p><h2 class="hx__title">Every stitch, by hand</h2></div>
+  </section>
+
   <section class="tl" id="ateliers" aria-labelledby="tlTitle">
     <div class="tl__sticky">
       <div class="tl__track">
@@ -394,63 +570,66 @@
             <div class="tl__txt"><span class="tl__mask"><span class="tl__k">Step VII</span></span><h3 class="tl__mask"><span class="tl__n">The final press</span></h3><p class="tl__mask"><span class="tl__d">Pressed, delivered and cared for as long as you wear it.</span></p></div></div>
         </div>
 
-        <div class="tl__pic"><img src="./images/bride_red.webp" alt="Bride in a red embroidered lehenga"></div>
+        <div class="tl__pic"><img src="./images/suits/tobacco-db-2.webp" alt="Tobacco brown double-breasted suit, hand-finished"></div>
       </div>
     </div>
   </section>
 
-  <section class="atel" hidden style="display:none" aria-hidden="true">
-    <div class="wrap">
-      <div class="atel__head">
-        <div class="eyebrow" id="atelTitle">Meet our ateliers</div>
-        <div class="tabs" role="tablist">
-          <button class="tab" role="tab" aria-selected="true" aria-controls="p-suit" id="t-suit">Bespoke Tailoring</button>
-          <button class="tab" role="tab" aria-selected="false" aria-controls="p-bride" id="t-bride">Bridal Couture</button>
-        </div>
-      </div>
-      <div class="atel__body">
-        <div class="atel__pic">
-          <img loading="lazy" src="./images/c_suit.webp" alt="Two bespoke suits on mannequins in the atelier" class="on" data-pic="p-suit">
-          <img loading="lazy" src="./images/bride_red.webp" alt="Bride in a red embroidered lehenga" data-pic="p-bride">
-        </div>
-        <div>
-          
-          <div class="atel__panel" id="p-bride" role="tabpanel" aria-labelledby="t-bride" hidden>
-            <h3 class="display t-bronze">Bridal Couture</h3>
-            <p>Gowns, lehengas and designer bridal wear, embroidered in our atelier and fitted in the weeks before the wedding.</p>
-            <div class="cards" data-cards>
-              <div class="card" style="--i:0"><div class="card__top"><svg class="card__ic" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M27 4 9 26" stroke="currentColor" stroke-width=".9"/><ellipse cx="25.6" cy="5.8" rx=".9" ry="2.2" transform="rotate(39 25.6 5.8)" stroke="currentColor" stroke-width=".7"/><path d="M9 26c-3 2-4 4-2 5s4-1 6-3 5-4 8-3" stroke="currentColor" stroke-width=".7" stroke-linecap="round"/><circle cx="7" cy="9" r="3.2" stroke="currentColor" stroke-width=".7"/><path d="M7 5.8v6.4M3.8 9h6.4" stroke="currentColor" stroke-width=".5"/></svg><h4>Hand Embroidery</h4></div><p>Zardozi, aari and resham work, placed stitch by stitch to your design.</p><button class="rm">Read more</button></div>
-              <div class="card" style="--i:1"><div class="card__top"><svg class="card__ic" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M27 4 9 26" stroke="currentColor" stroke-width=".9"/><ellipse cx="25.6" cy="5.8" rx=".9" ry="2.2" transform="rotate(39 25.6 5.8)" stroke="currentColor" stroke-width=".7"/><path d="M9 26c-3 2-4 4-2 5s4-1 6-3 5-4 8-3" stroke="currentColor" stroke-width=".7" stroke-linecap="round"/><circle cx="7" cy="9" r="3.2" stroke="currentColor" stroke-width=".7"/><path d="M7 5.8v6.4M3.8 9h6.4" stroke="currentColor" stroke-width=".5"/></svg><h4>Inner Corsetry</h4></div><p>A structured bodice built inside the gown for support through the whole day.</p><button class="rm">Read more</button></div>
-              <div class="card" style="--i:2"><div class="card__top"><svg class="card__ic" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M27 4 9 26" stroke="currentColor" stroke-width=".9"/><ellipse cx="25.6" cy="5.8" rx=".9" ry="2.2" transform="rotate(39 25.6 5.8)" stroke="currentColor" stroke-width=".7"/><path d="M9 26c-3 2-4 4-2 5s4-1 6-3 5-4 8-3" stroke="currentColor" stroke-width=".7" stroke-linecap="round"/><circle cx="7" cy="9" r="3.2" stroke="currentColor" stroke-width=".7"/><path d="M7 5.8v6.4M3.8 9h6.4" stroke="currentColor" stroke-width=".5"/></svg><h4>Lace Appliqué</h4></div><p>Lace motifs cut and placed by hand so the seams disappear.</p><button class="rm">Read more</button></div>
-              <div class="card" style="--i:3"><div class="card__top"><svg class="card__ic" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M27 4 9 26" stroke="currentColor" stroke-width=".9"/><ellipse cx="25.6" cy="5.8" rx=".9" ry="2.2" transform="rotate(39 25.6 5.8)" stroke="currentColor" stroke-width=".7"/><path d="M9 26c-3 2-4 4-2 5s4-1 6-3 5-4 8-3" stroke="currentColor" stroke-width=".7" stroke-linecap="round"/><circle cx="7" cy="9" r="3.2" stroke="currentColor" stroke-width=".7"/><path d="M7 5.8v6.4M3.8 9h6.4" stroke="currentColor" stroke-width=".5"/></svg><h4>The Train</h4></div><p>Chapel or cathedral length, weighted and bustled for the reception.</p><button class="rm">Read more</button></div>
-              <div class="card" style="--i:4"><div class="card__top"><svg class="card__ic" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M27 4 9 26" stroke="currentColor" stroke-width=".9"/><ellipse cx="25.6" cy="5.8" rx=".9" ry="2.2" transform="rotate(39 25.6 5.8)" stroke="currentColor" stroke-width=".7"/><path d="M9 26c-3 2-4 4-2 5s4-1 6-3 5-4 8-3" stroke="currentColor" stroke-width=".7" stroke-linecap="round"/><circle cx="7" cy="9" r="3.2" stroke="currentColor" stroke-width=".7"/><path d="M7 5.8v6.4M3.8 9h6.4" stroke="currentColor" stroke-width=".5"/></svg><h4>Lehenga Can-can</h4></div><p>Layered netting gives the skirt its volume without the weight.</p><button class="rm">Read more</button></div>
-              <div class="card" style="--i:5"><div class="card__top"><svg class="card__ic" viewBox="0 0 34 34" fill="none" aria-hidden="true"><path d="M27 4 9 26" stroke="currentColor" stroke-width=".9"/><ellipse cx="25.6" cy="5.8" rx=".9" ry="2.2" transform="rotate(39 25.6 5.8)" stroke="currentColor" stroke-width=".7"/><path d="M9 26c-3 2-4 4-2 5s4-1 6-3 5-4 8-3" stroke="currentColor" stroke-width=".7" stroke-linecap="round"/><circle cx="7" cy="9" r="3.2" stroke="currentColor" stroke-width=".7"/><path d="M7 5.8v6.4M3.8 9h6.4" stroke="currentColor" stroke-width=".5"/></svg><h4>The Final Fitting</h4></div><p>A last fitting days before the wedding, with your shoes and jewellery.</p><button class="rm">Read more</button></div>
-            </div>
-            <a class="atel__go btn-arrow" href="#/gowns">Explore Wedding Gowns <i class="btn-arrow__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg></i></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="coll">
-        <a href="#/suits"><img loading="lazy" src="./images/c_suit.webp" alt=""><span>Bespoke Suits <i class="btn-arrow"><i class="btn-arrow__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg></i></i></span></a>
-        <a href="#/suits"><img loading="lazy" src="./images/c_tux.webp" alt=""><span>Black Tie <i class="btn-arrow"><i class="btn-arrow__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg></i></i></span></a>
-        <a href="./ethnic.html"><img loading="lazy" src="./images/c_sherwani.webp" alt=""><span>Ethnic Wear <i class="btn-arrow"><i class="btn-arrow__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg></i></i></span></a>
-        <a href="#/gowns"><img src="./images/hero_gown.webp" alt=""><span>Wedding Gowns <i class="btn-arrow"><i class="btn-arrow__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg></i></i></span></a>
-      </div>
-    </div>
-  </section>
 
 
   <!-- ═══ FITTING ROOM ═══ -->
+  <!-- ═══ OCCASIONS ═══ -->
+  <section class="hx hx--dark hocc" aria-labelledby="hoccTitle">
+    <p class="hx__eye">Dress for the Occasion</p>
+    <h2 class="hx__title" id="hoccTitle">What are you dressing for?</h2>
+    <div class="hocc__grid">
+      <a class="hocc__card hx-in" href="#contact" data-occ="Ethnic Wear"><img loading="lazy" src="./images/ethnic/sherwanis/sherwani%202a.webp" alt=""><span>Wedding</span></a>
+      <a class="hocc__card hx-in" href="#contact" data-occ="Bespoke suit"><img loading="lazy" src="./images/hero_suit.webp" alt=""><span>Office</span></a>
+      <a class="hocc__card hx-in" href="#contact" data-occ="Ethnic Wear"><img loading="lazy" src="./images/ethnic/kurtas/kurta%202a.webp" alt=""><span>Festive</span></a>
+      <a class="hocc__card hx-in" href="#contact" data-occ="Black tie"><img loading="lazy" src="./images/c_tux.webp" alt=""><span>Evening</span></a>
+    </div>
+  </section>
+
+  <!-- ═══ FABRIC LIBRARY ═══ -->
+  <section class="hx hx--cream hfab" aria-labelledby="hfabTitle">
+    <p class="hx__eye">The Fabric Library</p>
+    <h2 class="hx__title" id="hfabTitle">Chosen by touch</h2>
+    <div class="hfab__strip"><ul class="hfab__row">
+      <li><img loading="lazy" src="./images/fabric/navy-pinstripe.webp" alt=""><span>Navy Rust Pinstripe</span><small>Wool twill</small></li>
+      <li><img loading="lazy" src="./images/fabric/burgundy-twill.webp" alt=""><span>Deep Burgundy</span><small>Wool twill</small></li>
+      <li><img loading="lazy" src="./images/fabric/royal-navy-twill.webp" alt=""><span>Royal Navy</span><small>Wool twill</small></li>
+      <li><img loading="lazy" src="./images/fabric/tobacco-twill.webp" alt=""><span>Tobacco Brown</span><small>Wool twill</small></li>
+      <li><img loading="lazy" src="./images/fabric/plum-twill.webp" alt=""><span>Deep Plum</span><small>Wool twill</small></li>
+      <li><img loading="lazy" src="./images/fabric/navy-stripe-check.webp" alt=""><span>Navy Stripe Check</span><small>Wool</small></li>
+      <li aria-hidden="true"><img loading="lazy" src="./images/fabric/navy-pinstripe.webp" alt=""><span>Navy Rust Pinstripe</span><small>Wool twill</small></li>
+      <li aria-hidden="true"><img loading="lazy" src="./images/fabric/burgundy-twill.webp" alt=""><span>Deep Burgundy</span><small>Wool twill</small></li>
+      <li aria-hidden="true"><img loading="lazy" src="./images/fabric/royal-navy-twill.webp" alt=""><span>Royal Navy</span><small>Wool twill</small></li>
+      <li aria-hidden="true"><img loading="lazy" src="./images/fabric/tobacco-twill.webp" alt=""><span>Tobacco Brown</span><small>Wool twill</small></li>
+      <li aria-hidden="true"><img loading="lazy" src="./images/fabric/plum-twill.webp" alt=""><span>Deep Plum</span><small>Wool twill</small></li>
+      <li aria-hidden="true"><img loading="lazy" src="./images/fabric/navy-stripe-check.webp" alt=""><span>Navy Stripe Check</span><small>Wool</small></li>
+    </ul></div>
+  </section>
+
+  <!-- ═══ HERITAGE NUMBERS ═══ -->
+  <section class="hx hher" aria-label="The house in numbers">
+    <p class="hher__line">A family tailoring house in Hyderabad, measuring, cutting and finishing every garment under one roof.</p>
+    <ul class="hher__nums" hidden style="display:none">
+      <li><b>XX+</b><span>Years of tailoring</span></li>
+      <li><b>XX,XXX</b><span>Garments made</span></li>
+      <li><b>3</b><span>Fittings per suit</span></li>
+      <li><b>XX</b><span>Hours of handwork</span></li>
+    </ul>
+  </section>
+
   <section class="fit" id="fit" aria-labelledby="fitTitle">
     <h2 class="fit__title display t-gold reveal" id="fitTitle" data-reveal><span class="line"><span>The Fitting</span></span><span class="line" style="--i:1"><span>Room</span></span></h2>
     <div class="fit__stage">
       <div class="fit__card" id="fitCard"><img loading="lazy" src="./images/rotate.webp" alt="Black bespoke jacket on a wooden mannequin"></div>
       <div class="fit__glow"></div>
     </div>
-    <div class="swatch --a" data-depth="30"><i><img loading="lazy" src="./images/f_navy.webp" alt=""></i><span>Navy chalk stripe</span></div>
-    <div class="swatch --b" data-depth="-24"><i><img loading="lazy" src="./images/f_satin.webp" alt=""></i><span>Midnight satin</span></div>
-    <div class="swatch --c" data-depth="18"><i><img loading="lazy" src="./images/f_silk.webp" alt=""></i><span>Ivory silk</span></div>
+    <div class="swatch --a" data-depth="30"><i><img loading="lazy" src="./images/fabric/navy-pinstripe.webp" alt=""></i><span>Navy pinstripe</span></div>
+    <div class="swatch --b" data-depth="-24"><i><img loading="lazy" src="./images/fabric/burgundy-twill.webp" alt=""></i><span>Deep burgundy</span></div>
+    <div class="swatch --c" data-depth="18"><i><img loading="lazy" src="./images/fabric/tobacco-twill.webp" alt=""></i><span>Tobacco brown</span></div>
     <a class="fit__link btn-pill --gradient" href="#contact"><span>Book a Fitting</span></a>
     <div class="cursor t-gold" id="cursor"><span>Explore</span></div>
   </section>
@@ -467,43 +646,55 @@
   </section>
 
 
-  <!-- ═══ REVIEWS ═══ -->
-  <div class="rev-wrap" id="reviews">
-    <section class="rev" id="rev" aria-labelledby="revTitle">
-      <div class="rev__sticky">
-        <div class="eyebrow" style="position:relative;z-index:1">What our clients say</div>
-        <h2 class="display t-bronze" id="revTitle">Words that<br>stayed with us</h2>
-        <div class="stack" id="stack">
-          <article class="rcard"><span class="mono"><b>P</b><b>B</b></span><p>Your client's words about their wedding gown fitting go here. Keep it to three or four sentences.</p><b>Client initials · City</b><em>Sample review</em></article>
-          <article class="rcard"><span class="mono"><b>P</b><b>B</b></span><p>A review from a bespoke suit client goes here: the fittings, the cloth, how the suit wears today.</p><b>Client initials · City</b><em>Sample review</em></article>
-          <article class="rcard"><span class="mono"><b>P</b><b>B</b></span><p>A client's review of their designer piece goes here. Replace these three cards with real reviews before launch.</p><b>Client initials · City</b><em>Sample review</em></article>
-        </div>
-      </div>
-    </section>
-  </div>
+  <!-- ═══ REVIEWS (Google) ═══ -->
+  <section class="grev" id="reviews" aria-labelledby="revTitle">
+    <p class="hx__eye">What our clients say</p>
+    <h2 class="hx__title" id="revTitle">Reviewed on Google</h2>
+    <p class="grev__lead">Every review is from a client we have measured, cut for and fitted in our Secunderabad atelier.</p>
+    <!-- GOOGLE REVIEWS WIDGET: paste the free widget code (Trustindex / Elfsight) inside this div -->
+    <div class="grev__widget" id="grevWidget"></div>
+    <div class="grev__btns">
+      <a class="grev__btn --solid" href="https://search.google.com/local/reviews?placeid=ChIJ8Zj4ghqayzsR7zmbgsQEm_c" target="_blank" rel="noopener">Read our Google reviews</a>
+      <a class="grev__btn" href="https://search.google.com/local/writereview?placeid=ChIJ8Zj4ghqayzsR7zmbgsQEm_c" target="_blank" rel="noopener">Write a review</a>
+    </div>
+  </section>
 
 
   <!-- ═══ CONSULTATION ═══ -->
+  <!-- ═══ INSTAGRAM ═══ -->
+  <section class="hx hx--cream hig" aria-labelledby="higTitle" hidden style="display:none">
+    <p class="hx__eye">Follow the House</p>
+    <h2 class="hx__title" id="higTitle"><a href="https://www.instagram.com/" target="_blank" rel="noopener">@prasadsbespoke</a></h2>
+    <div class="hig__grid">
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img loading="lazy" src="./images/ethnic/bg/kurtas.webp" alt=""></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img loading="lazy" src="./images/c_suit.webp" alt=""></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img loading="lazy" src="./images/ethnic/bg/sherwanis.webp" alt=""></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img loading="lazy" src="./images/atelier.webp" alt=""></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img loading="lazy" src="./images/ethnic/bg/bandhgalas.webp" alt=""></a>
+      <a href="https://www.instagram.com/" target="_blank" rel="noopener"><img loading="lazy" src="./images/rotate.webp" alt=""></a>
+    </div>
+  </section>
+
   <section class="consult" id="contact" aria-labelledby="consultTitle">
     <div class="consult__img"><img loading="lazy" src="./images/atelier.webp" alt="Two clients in suits taking tea in the tailoring atelier"></div>
     <form class="consult__form" id="form" novalidate>
       <div class="eyebrow">Consultation</div>
       <h2 class="display t-bronze" id="consultTitle">Book your<br>first sitting</h2>
-      <p class="lead">Your first sitting is for conversation, cloth and measurements. Tell us what you are dreaming of.</p>
+      <p class="lead">Your first sitting is for conversation, cloth and measurements. Send your request and we will confirm a time on WhatsApp.</p>
       <div class="row2">
         <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" autocomplete="name" required></div>
         <div class="field"><label for="f-occ">Occasion</label>
           <select id="f-occ" name="occasion"><option>Bespoke suit</option><option>Formal shirts</option><option>Ethnic Wear</option><option>Black tie</option><option>Alterations</option></select></div>
       </div>
       <div class="row2">
-        <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-email">Email (optional)</label><input id="f-email" name="email" type="email" autocomplete="email"></div>
           <div class="field"><label for="f-phone">Phone number</label>
           <input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+91 98765 43210" pattern="^\+?[0-9\s\-]{10,15}$" title="Enter a valid phone number, e.g. +91 98765 43210" required>
           <input type="hidden" id="f-date" name="date">
         
           </div>
       </div>
-      <div><button class="btn-pill --line" type="submit">Request a sitting</button></div>
+      <div><button class="btn-pill --line" type="submit">Request on WhatsApp</button></div>
       <p class="note" id="note" role="status"></p>
     </form>
   </section>
@@ -512,23 +703,24 @@
 <footer class="footer" id="footer">
   <div class="wrap">
     <div class="footer__top">
-      <div><h5 class="t-gold">Discover the house</h5><ul><li><a href="#ateliers">Our Atelier</a></li><li><a href="#/suits">Bespoke Suits</a></li><li><a href="#/suits" data-goto="formals">Formals</a></li><li><a href="#/designer-wear">Ethnic Wear</a></li><li><a href="#fit">The Fitting Room</a></li><li><a href="#contact">Book a Fitting</a></li></ul></div>
-      <div><h5 class="t-gold">Subscribe to our journal</h5>
-        <form class="sub" id="sub"><label for="s-email" style="position:absolute;left:-9999px">Email</label><input id="s-email" type="email" placeholder="Your email" required><button type="submit">Send</button></form>
-        <p class="note" id="subNote" style="color:#bfa182;margin-top:10px"></p>
+      <div><h5 class="t-gold">Discover the house</h5><ul><li><a href="#ateliers">Our Atelier</a></li><li><a href="#/suits">Bespoke Suits</a></li><li><a href="#/suits" data-goto="formals">Formals</a></li><li><a href="./ethnic.html">Ethnic Wear</a></li><li><a href="#fit">The Fitting Room</a></li><li><a href="#contact">Book a Fitting</a></li></ul></div>
+      <div><h5 class="t-gold">Visit the atelier</h5>
+        <p class="fvisit">Shop No. 18, Ground Floor, MG Road,<br>opp. Charmas, Kalasiguda,<br>Secunderabad 500003</p>
+        <p class="fvisit">Mon&ndash;Sat &middot; 11 AM &ndash; 9 PM<br>Sunday closed</p>
+        <p class="fvisit"><a href="https://www.google.com/maps/search/?api=1&amp;query=Prasad%27s+Bespoke&amp;query_place_id=ChIJ8Zj4ghqayzsR7zmbgsQEm_c" target="_blank" rel="noopener">Get directions &rarr;</a></p>
       </div>
-      <div><h5 class="t-gold">Need help?</h5><ul><li><a href="#contact">Appointments</a></li><li><a href="#contact">Alterations & care</a></li><li><a href="#contact">Visit the atelier</a></li></ul></div>
+      <div><h5 class="t-gold">Need help?</h5><ul><li><a href="#contact">Appointments</a></li><li><a href="#contact">Alterations & care</a></li><li><a href="https://wa.me/918555002624" target="_blank" rel="noopener">WhatsApp us</a></li></ul></div>
     </div>
     <div id="word" hidden></div>
     
     <div class="footer__brand" aria-label="Prasad's Bespoke">
   <span class="footer__brand-name">PRASAD’S</span>
   <span class="footer__brand-sub">BESPOKE</span>
-  <span class="footer__brand-tag">Hyderabad’s finest handcrafted couture</span>
+  <span class="footer__brand-tag">Hyderabad’s finest handcrafted menswear</span>
     </div>
     <div class="footer__bot">
       <span>© 2026 Prasads Bespoke. All rights reserved.</span>
-      <nav><a href="#top">Privacy policy</a><a href="#top">Terms & conditions</a><a href="#top">Returns</a></nav>
+      
       <span class="credit">Photography: Pexels</span>
     </div>
   </div>
@@ -548,112 +740,43 @@
       <a href="#contact" class="cbar__book" data-book>Book a Fitting</a>
     </div>
 
-    <header class="chero bg-noise">
-      <div class="suit-sketch" aria-hidden="true"></div>
-      <div class="chero__copy">
-        <div class="eyebrow chero__eye reveal --fade"><span class="line"><span>Collection 01 / 03</span></span></div>
-        <h1 class="display t-gold-deep reveal chero__h"><span class="line"><span>Bespoke</span></span><span class="line" style="--i:1"><span>Suits</span></span></h1>
-        <p class="chero__lede" data-rise style="--i:3">Every suit begins as a paper pattern drafted for you alone, then cut, built and finished by hand across three fittings.</p>
-        <div class="chero__act" data-rise style="--i:4"><a href="#contact" class="btn-pill --gradient" data-book><span>Book a Fitting</span></a><span class="chero__scroll" aria-hidden="true">Scroll</span></div>
-      </div>
-      <div class="chero__art">
-        <div class="chero__pic" data-clip><img src="./images/c_suit.webp" alt="Two bespoke suits on mannequins in the atelier"></div>
-        <div class="chero__pic2" data-clip style="--i:2"><img src="./images/hero_suit.webp" alt="Senior tailor beside a bespoke suit on a mannequin"></div>
-      </div>
-    </header>
+    <section class="scat" aria-labelledby="scatTitle">
+      <h1 class="scat__title" id="scatTitle">Bespoke Suits</h1>
+      <p class="scat__intro">The house&rsquo;s core expression of tailoring. Cut by hand, built across three fittings and finished in our Hyderabad atelier, every suit is made to frame the body with quiet authority and lasting ease.</p>
+      <div class="scat__banner" id="formals"><img src="./images/atelier.webp" alt="Bespoke suits in the Prasads atelier"></div>
 
-    <section class="cintro" aria-label="About Bespoke Suits">
-      <div class="cintro__in">
-        <p class="cintro__big" data-rise>A suit built around the way you <em>stand, move and sit</em>, and kept on file so it can be made again, exactly, for as long as you like.</p>
-        <ul class="cintro__marks"><li data-rise style="--i:0"><h3>Made for one</h3><p>One paper pattern, drafted by hand and kept on file for life.</p></li><li data-rise style="--i:1"><h3>Three fittings</h3><p>Baste, forward, finish. Each one brings the cut closer to your posture.</p></li><li data-rise style="--i:2"><h3>The hand at work</h3><p>Full canvas, hand-padded lapels and buttonholes sewn in silk twist.</p></li></ul>
-      </div>
-    </section>
-
-    <section class="cdets" aria-label="Details">
-      <div class="cdets__in">
-        <div class="eyebrow reveal --fade"><span class="line"><span>The craft</span></span></div>
-        <h2 class="display t-bronze reveal"><span class="line"><span>The details we never skip</span></span></h2>
-        <div class="cdets__grid"><div class="cdet" data-rise style="--i:0"><span class="cdet__n" aria-hidden="true">01</span><h3>Full Canvas</h3><p>A floating horsehair canvas shapes the chest and moulds to you over years of wear.</p></div><div class="cdet" data-rise style="--i:1"><span class="cdet__n" aria-hidden="true">02</span><h3>Hand-padded Lapel</h3><p>Hundreds of small stitches give the lapel its soft, natural roll.</p></div><div class="cdet" data-rise style="--i:2"><span class="cdet__n" aria-hidden="true">03</span><h3>Working Cuffs</h3><p>Surgeon's cuffs with buttonholes that open, finished by hand.</p></div><div class="cdet" data-rise style="--i:3"><span class="cdet__n" aria-hidden="true">04</span><h3>Pick Stitching</h3><p>A fine hand stitch along the edges, visible only up close.</p></div><div class="cdet" data-rise style="--i:4"><span class="cdet__n" aria-hidden="true">05</span><h3>Hand Buttonholes</h3><p>Silk twist sewn by hand around a corded edge, one buttonhole at a time.</p></div><div class="cdet" data-rise style="--i:5"><span class="cdet__n" aria-hidden="true">06</span><h3>Your Lining</h3><p>Bemberg or silk linings chosen with you, with your monogram inside.</p></div></div>
-      </div>
-    </section>
-
-    <section class="cgal" aria-label="Gallery"><div class="cgal__in"><figure class="cgal__it --1" data-rise style="--i:0"><div><img loading="lazy" decoding="async" src="./images/chalk.webp" alt="A tailor marking cloth with chalk at the cutting table"></div><figcaption>The first measure</figcaption></figure><figure class="cgal__it --2" data-rise style="--i:1"><div><img loading="lazy" decoding="async" src="./images/rotate.webp" alt="Black bespoke jacket on a wooden mannequin"></div><figcaption>On the stand</figcaption></figure><figure class="cgal__it --3" data-rise style="--i:2"><div><img loading="lazy" decoding="async" src="./images/c_tux.webp" alt="Groom in a navy dinner suit in a panelled corridor"></div><figcaption>Black tie</figcaption></figure></div></section>
-
-    <section class="ccloth bg-noise" aria-label="Cloth">
-      <div class="ccloth__in">
-        <div class="ccloth__pic" data-clip><img loading="lazy" decoding="async" src="./images/f_navy.webp" alt="Navy pinstripe worsted cloth"></div>
-        <div class="ccloth__txt">
-          <div class="eyebrow reveal --fade"><span class="line"><span>From our cloth library</span></span></div>
-          <h2 class="display t-gold reveal"><span class="line"><span>Cloth &amp; lining</span></span></h2>
-          <ul><li data-rise style="--i:0">Super 150s and 180s worsted wool</li><li data-rise style="--i:1">Wool-silk and wool-mohair blends</li><li data-rise style="--i:2">Cashmere overcoatings</li><li data-rise style="--i:3">Irish and Italian linen</li><li data-rise style="--i:4">Mother-of-pearl, horn and corozo buttons</li></ul>
-        </div>
-      </div>
-    </section>
-
-        <section class="tl --suits" aria-labelledby="sjTitle">
-      <div class="tl__sticky">
-        <div class="tl__track">
-          <div class="tl__pic"><img src="./images/c_suit.webp" alt="Two bespoke suits on mannequins in the atelier"></div>
-
-          <div class="tl__rail">
-            <div class="tl__line" aria-hidden="true"><i></i><b class="tl__fill"></b><i></i></div>
-
-            <div class="tl__head --top">
-              <span class="tl__eye">How it is made</span>
-              <h2 class="tl__title" id="sjTitle">The<br>journey</h2>
-            </div>
-            <div class="tl__head --bot"><span class="tl__period">Four steps · Three fittings</span></div>
-
-            <div class="tl__item --top" style="left:24%"><span class="tl__stem"></span><span class="tl__dot"></span>
-              <div class="tl__txt"><span class="tl__mask"><span class="tl__k">Step I</span></span><h3 class="tl__mask"><span class="tl__n">The first sitting</span></h3><p class="tl__mask"><span class="tl__d">Conversation, cloth and measurements. Tell us how you wear a suit.</span></p></div></div>
-
-            <div class="tl__item --bot" style="left:43%"><span class="tl__stem"></span><span class="tl__dot"></span>
-              <div class="tl__txt"><span class="tl__mask"><span class="tl__k">Step II</span></span><h3 class="tl__mask"><span class="tl__n">The pattern</span></h3><p class="tl__mask"><span class="tl__d">A paper pattern drafted by hand for you alone.</span></p></div></div>
-
-            <div class="tl__item --top" style="left:62%"><span class="tl__stem"></span><span class="tl__dot"></span>
-              <div class="tl__txt"><span class="tl__mask"><span class="tl__k">Step III</span></span><h3 class="tl__mask"><span class="tl__n">Three fittings</span></h3><p class="tl__mask"><span class="tl__d">Baste, forward, finish, each closer to the way you stand.</span></p></div></div>
-
-            <div class="tl__item --bot" style="left:81%"><span class="tl__stem"></span><span class="tl__dot"></span>
-              <div class="tl__txt"><span class="tl__mask"><span class="tl__k">Step IV</span></span><h3 class="tl__mask"><span class="tl__n">The finish</span></h3><p class="tl__mask"><span class="tl__d">Pressed and delivered, then altered and restored for as long as you wear it.</span></p></div></div>
+      <div class="scat__body">
+      <div class="scat__bar">
+        <span class="scat__count">Products (<b id="scatCount">6</b>)</span>
+        <div class="scat__filter">
+          <button type="button" class="scat__fbtn" id="scatFilterBtn" aria-expanded="false" aria-controls="scatFilterPanel">
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.1" aria-hidden="true"><path d="M2 4h12M4.5 8h7M7 12h2"/></svg>
+            <span>Filter</span>
+          </button>
+          <div class="scat__fpanel" id="scatFilterPanel" hidden>
+            <button type="button" data-cat="all" class="is-on">All</button>
+            <button type="button" data-cat="suit">Suits</button>
+            <button type="button" data-cat="jacket">Jackets</button>
+            <button type="button" data-cat="formal">Formals</button>
           </div>
-
-          <div class="tl__pic"><img src="./images/c_tux.webp" alt="Groom in a navy dinner suit in a panelled corridor"></div>
+        </div>
+        <div class="scat__opts">
+          <label>Show <select id="scatShow"><option value="8">8</option><option value="12" selected>12</option><option value="24">24</option></select></label>
+          <label><span class="sr-only">Sort by</span><select id="scatSort"><option value="featured">Featured</option><option value="az">Name: A&ndash;Z</option><option value="za">Name: Z&ndash;A</option></select></label>
         </div>
       </div>
-    </section>
-        <section class="fm" id="formals" aria-labelledby="fmTitle">
-      <div class="fm__head">
-        <div>
-          <span class="fm__eye">The shirt room</span>
-          <h2 class="fm__title" id="fmTitle">Formals</h2>
-        </div>
-        <p class="fm__lede">Twelve house shirts, each cut from your own paper pattern. Choose the cloth, the collar and the cuff, and we make it to your measure.</p>
-      </div>
-      <div class="fm__grid">
-        <a class="fm__card --big" href="#contact" data-book><img loading="lazy" src="./images/hero_suit.webp" alt="Classic white poplin shirt"><span class="fm__cap"><i>01</i><b>Classic White Poplin</b><small>Cutaway collar · 100s two-ply cotton</small></span></a>
-        <a class="fm__card" href="#contact" data-book><img loading="lazy" src="./images/f_navy.webp" alt="Sky blue oxford shirt"><span class="fm__cap"><i>02</i><b>Sky Blue Oxford</b><small>Button-down collar</small></span></a>
-        <a class="fm__card" href="#contact" data-book><img loading="lazy" src="./images/f_silk.webp" alt="Ivory twill shirt"><span class="fm__cap"><i>03</i><b>Ivory Twill</b><small>Spread collar</small></span></a>
-        <a class="fm__card --wide" href="#contact" data-book><img loading="lazy" src="./images/atelier.webp" alt="French cuff dress shirt"><span class="fm__cap"><i>04</i><b>French Cuff Dress Shirt</b><small>Double cuff · mother-of-pearl buttons</small></span></a>
-        <a class="fm__card --tall" href="#contact" data-book><img loading="lazy" src="./images/c_tux.webp" alt="Black tie pleated front shirt"><span class="fm__cap"><i>05</i><b>Black Tie Pleated Front</b><small>Wing collar · for evening wear</small></span></a>
-        <a class="fm__card" href="#contact" data-book><img loading="lazy" src="./images/f_satin.webp" alt="Pale pink end-on-end shirt"><span class="fm__cap"><i>06</i><b>Pale Pink End-on-End</b><small>Semi-spread collar</small></span></a>
-        <a class="fm__card" href="#contact" data-book><img loading="lazy" src="./images/chalk.webp" alt="Bengal stripe shirt"><span class="fm__cap"><i>07</i><b>Bengal Stripe</b><small>Classic collar</small></span></a>
-        <a class="fm__card --tall" href="#contact" data-book><img loading="lazy" src="./images/rotate.webp" alt="Navy micro-check shirt"><span class="fm__cap"><i>08</i><b>Navy Micro-Check</b><small>Cutaway collar</small></span></a>
-        <a class="fm__card --wide" href="#contact" data-book><img loading="lazy" src="./images/c_suit.webp" alt="Grey herringbone shirt"><span class="fm__cap"><i>09</i><b>Grey Herringbone</b><small>Spread collar · textured weave</small></span></a>
-        <a class="fm__card" href="#contact" data-book><img loading="lazy" src="./images/f_silk.webp" alt="Linen mandarin collar shirt"><span class="fm__cap"><i>10</i><b>Linen Mandarin Collar</b><small>Irish linen</small></span></a>
-        <a class="fm__card --wide" href="#contact" data-book><img loading="lazy" src="./images/hero_sherwani.webp" alt="Cream royal oxford shirt"><span class="fm__cap"><i>11</i><b>Cream Royal Oxford</b><small>Hidden button-down</small></span></a>
-        <a class="fm__card" href="#contact" data-book><img loading="lazy" src="./images/f_navy.webp" alt="Lavender pinpoint shirt"><span class="fm__cap"><i>12</i><b>Lavender Pinpoint</b><small>Club collar</small></span></a>
-      </div>
-    </section>
-    <section class="ccta bg-noise" aria-label="Book a fitting">
-      <h2 class="display t-gold-deep reveal"><span class="line"><span>Begin your suit</span></span></h2>
-      <p data-rise>Your first sitting is for conversation, cloth and measurements.</p>
-      <a href="#contact" class="btn-pill --gradient" data-rise data-book style="--i:2"><span>Book a Fitting</span></a>
-    </section>
 
-    <a class="cnext" href="./ethnic.html">
-      <img loading="lazy" decoding="async" src="./images/c_sherwani.webp" alt="">
-      <span class="cnext__txt"><span class="eyebrow">Next collection</span><span class="display cnext__t">Ethnic Wear</span><span class="btn-arrow">Explore <i class="btn-arrow__icon"><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg><svg viewBox="0 0 10 10" fill="none"><path d="M1 9 9 1M3 1h6v6" stroke="currentColor" stroke-width=".9"/></svg></i></span></span>
-    </a>
+      <ul class="scat__grid" id="scatGrid">
+        <li class="scat__item" data-cat="suit" data-name="Plum Double-Breasted Suit"><div class="scat__media"><a href="#contact" data-book class="scat__pic"><img loading="lazy" src="./images/suits/plum-db-1.webp" alt="Plum Double-Breasted Suit" class="scat__img is-on"><img loading="lazy" src="./images/suits/plum-db-2.webp" alt="" aria-hidden="true" class="scat__img"></a><div class="scat__dots"><button type="button" class="scat__dot is-on" aria-label="View 1 of 2"></button><button type="button" class="scat__dot" aria-label="View 2 of 2"></button></div></div><h3 class="scat__name">Plum Double-Breasted Suit</h3><a href="#contact" data-book class="scat__btn">Price On Request</a></li>
+        <li class="scat__item" data-cat="suit" data-name="Navy Chalk Stripe Double-Breasted Suit"><div class="scat__media"><a href="#contact" data-book class="scat__pic"><img loading="lazy" src="./images/suits/navy-chalk-db-1.webp" alt="Navy Chalk Stripe Double-Breasted Suit" class="scat__img is-on"><img loading="lazy" src="./images/suits/navy-chalk-db-2.webp" alt="" aria-hidden="true" class="scat__img"></a><div class="scat__dots"><button type="button" class="scat__dot is-on" aria-label="View 1 of 2"></button><button type="button" class="scat__dot" aria-label="View 2 of 2"></button></div></div><h3 class="scat__name">Navy Chalk Stripe Double-Breasted Suit</h3><a href="#contact" data-book class="scat__btn">Price On Request</a></li>
+        <li class="scat__item" data-cat="suit" data-name="Navy Pinstripe Double-Breasted Suit"><div class="scat__media"><a href="#contact" data-book class="scat__pic"><img loading="lazy" src="./images/suits/navy-pin-db-1.webp" alt="Navy Pinstripe Double-Breasted Suit" class="scat__img is-on"><img loading="lazy" src="./images/suits/navy-pin-db-2.webp" alt="" aria-hidden="true" class="scat__img"></a><div class="scat__dots"><button type="button" class="scat__dot is-on" aria-label="View 1 of 2"></button><button type="button" class="scat__dot" aria-label="View 2 of 2"></button></div></div><h3 class="scat__name">Navy Pinstripe Double-Breasted Suit</h3><a href="#contact" data-book class="scat__btn">Price On Request</a></li>
+        <li class="scat__item" data-cat="suit" data-name="Navy Monochrome Double-Breasted Suit"><div class="scat__media"><a href="#contact" data-book class="scat__pic"><img loading="lazy" src="./images/suits/navy-mono-db-1.webp" alt="Navy Monochrome Double-Breasted Suit" class="scat__img is-on"><img loading="lazy" src="./images/suits/navy-mono-db-2.webp" alt="" aria-hidden="true" class="scat__img"><img loading="lazy" src="./images/suits/navy-mono-db-3.webp" alt="" aria-hidden="true" class="scat__img"></a><div class="scat__dots"><button type="button" class="scat__dot is-on" aria-label="View 1 of 3"></button><button type="button" class="scat__dot" aria-label="View 2 of 3"></button><button type="button" class="scat__dot" aria-label="View 3 of 3"></button></div></div><h3 class="scat__name">Navy Monochrome Double-Breasted Suit</h3><a href="#contact" data-book class="scat__btn">Price On Request</a></li>
+        <li class="scat__item" data-cat="suit" data-name="Tobacco Brown Double-Breasted Suit"><div class="scat__media"><a href="#contact" data-book class="scat__pic"><img loading="lazy" src="./images/suits/tobacco-db-1.webp" alt="Tobacco Brown Double-Breasted Suit" class="scat__img is-on"><img loading="lazy" src="./images/suits/tobacco-db-2.webp" alt="" aria-hidden="true" class="scat__img"><img loading="lazy" src="./images/suits/tobacco-db-3.webp" alt="" aria-hidden="true" class="scat__img"></a><div class="scat__dots"><button type="button" class="scat__dot is-on" aria-label="View 1 of 3"></button><button type="button" class="scat__dot" aria-label="View 2 of 3"></button><button type="button" class="scat__dot" aria-label="View 3 of 3"></button></div></div><h3 class="scat__name">Tobacco Brown Double-Breasted Suit</h3><a href="#contact" data-book class="scat__btn">Price On Request</a></li>
+        <li class="scat__item" data-cat="suit" data-name="Navy Windowpane Check Suit"><div class="scat__media"><a href="#contact" data-book class="scat__pic"><img loading="lazy" src="./images/suits/navy-check-1.webp" alt="Navy Windowpane Check Suit" class="scat__img is-on"><img loading="lazy" src="./images/suits/navy-check-2.webp" alt="" aria-hidden="true" class="scat__img"></a><div class="scat__dots"><button type="button" class="scat__dot is-on" aria-label="View 1 of 2"></button><button type="button" class="scat__dot" aria-label="View 2 of 2"></button></div></div><h3 class="scat__name">Navy Windowpane Check Suit</h3><a href="#contact" data-book class="scat__btn">Price On Request</a></li>
+      </ul>
+      <p class="scat__empty" id="scatEmpty" hidden>No pieces in this category yet.</p>
+      </div>
+    </section>
     <div class="cfoot"><span>&copy; 2026 Prasads Bespoke</span><button type="button" class="cbar__back btn-arrow" data-close><i class="btn-arrow__icon" style="transform:scaleX(-1)"><svg viewBox="0 0 10 10" fill="none"><path d="M1 5h8M6 2l3 3-3 3" stroke="currentColor" stroke-width=".9"/></svg><svg viewBox="0 0 10 10" fill="none"><path d="M1 5h8M6 2l3 3-3 3" stroke="currentColor" stroke-width=".9"/></svg></i><span>Back to the house</span></button></div>
    </div>
   </article>
@@ -661,39 +784,6 @@
   
 
   <script>
-document.querySelectorAll('.footer__top a, .footer__bot a').forEach(function (link) {
-  var text = link.textContent.trim();
-  var wrap = document.createElement('span');
-  wrap.className = 'lswap';
-  wrap.setAttribute('aria-hidden', 'true');
-  text.split('').forEach(function (ch, i) {
-    var cell = document.createElement('span');
-    cell.className = 'lswap__c';
-    cell.style.setProperty('--d', i);
-    var a = document.createElement('span'); a.className = 'lswap__a'; a.textContent = ch;
-    var b = document.createElement('span'); b.className = 'lswap__b'; b.textContent = ch;
-    cell.append(a, b);
-    wrap.appendChild(cell);
-  });
-  link.setAttribute('aria-label', text);
-  link.textContent = '';
-  link.appendChild(wrap);
-  var busy = false;
-  link.addEventListener('mouseenter', function () {
-    if (busy) return;
-    busy = true;
-    wrap.classList.add('is-on');
-    setTimeout(function () {
-      wrap.classList.add('is-reset');
-      wrap.classList.remove('is-on');
-      void wrap.offsetWidth;
-      wrap.classList.remove('is-reset');
-      busy = false;
-    }, 650 + text.length * 30);
-  });
-});
-</script>
-<script>
 (function () {
    var SEL = '.reveal,[data-reveal],[data-rise]:not(figure),[data-pop]:not(figure),[data-kw-in]:not(figure),[data-cards] .card';
    var els = Array.prototype.slice.call(document.querySelectorAll(SEL));
@@ -835,48 +925,6 @@ document.querySelectorAll('.footer__top a, .footer__bot a').forEach(function (li
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', update);
   update();
-})();
-</script>
-<script>
-(function () {
-  var hero = document.querySelector('.hero');
-  if (!hero) return;
-  var mq = window.matchMedia('(max-width:760px)');
-  var panels = Array.prototype.slice.call(hero.querySelectorAll('.hero__panel'));
-  var dots = document.createElement('div');
-  dots.className = 'hero__dots';
-  panels.forEach(function (p, i) {
-    var b = document.createElement('button');
-    b.type = 'button';
-    b.setAttribute('aria-label', 'Show slide ' + (i + 1));
-    b.addEventListener('click', function (e) { e.preventDefault(); go(i); restart(); });
-    dots.appendChild(b);
-  });
-  hero.appendChild(dots);
-
-  var cur = 0, timer = null, startX = 0;
-  function go(i) {
-    cur = (i + panels.length) % panels.length;
-    panels.forEach(function (p, k) { p.classList.toggle('is-active', k === cur); });
-    Array.prototype.forEach.call(dots.children, function (d, k) { d.classList.toggle('on', k === cur); });
-  }
-  function restart() {
-    clearInterval(timer);
-    if (mq.matches) timer = setInterval(function () { go(cur + 1); }, 4500);
-  }
-  hero.addEventListener('touchstart', function (e) { startX = e.touches[0].clientX; }, { passive: true });
-  hero.addEventListener('touchend', function (e) {
-    if (!mq.matches) return;
-    var dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 40) { go(cur + (dx < 0 ? 1 : -1)); restart(); }
-  }, { passive: true });
-  function setup() {
-    if (mq.matches) go(cur);
-    else panels.forEach(function (p) { p.classList.remove('is-active'); });
-    restart();
-  }
-  mq.addEventListener('change', setup);
-  setup();
 })();
 </script>
 <script>
@@ -1058,5 +1106,104 @@ document.querySelectorAll('.footer__top a, .footer__bot a').forEach(function (li
   </span>
   <span class="wa__txt">Chat with us</span>
 </a>
+<script>
+/* Bespoke Suits catalogue: filter, show-count and sort */
+(function () {
+  var grid = document.getElementById('scatGrid');
+  if (!grid) return;
+  var items = Array.prototype.slice.call(grid.children);
+  var cat = 'all';
+  var btn = document.getElementById('scatFilterBtn');
+  var panel = document.getElementById('scatFilterPanel');
+  var show = document.getElementById('scatShow');
+  var sort = document.getElementById('scatSort');
+  var count = document.getElementById('scatCount');
+  var empty = document.getElementById('scatEmpty');
+
+  function render() {
+    var list = items.slice();
+    if (sort.value === 'az') list.sort(function (a, b) { return a.dataset.name.localeCompare(b.dataset.name); });
+    if (sort.value === 'za') list.sort(function (a, b) { return b.dataset.name.localeCompare(a.dataset.name); });
+    var limit = parseInt(show.value, 10), shown = 0, match = 0;
+    list.forEach(function (li) {
+      grid.appendChild(li);
+      var ok = cat === 'all' || li.dataset.cat === cat;
+      if (ok) match++;
+      var vis = ok && shown < limit;
+      if (vis) shown++;
+      li.hidden = !vis;
+    });
+    count.textContent = match;
+    empty.hidden = match !== 0;
+  }
+
+  btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    var open = panel.hidden;
+    panel.hidden = !open;
+    btn.setAttribute('aria-expanded', String(open));
+  });
+  panel.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-cat]');
+    if (!b) return;
+    cat = b.dataset.cat;
+    panel.querySelectorAll('button').forEach(function (x) { x.classList.toggle('is-on', x === b); });
+    panel.hidden = true;
+    btn.setAttribute('aria-expanded', 'false');
+    render();
+  });
+  document.addEventListener('click', function (e) {
+    if (!panel.hidden && !e.target.closest('.scat__filter')) { panel.hidden = true; btn.setAttribute('aria-expanded', 'false'); }
+  });
+  show.addEventListener('change', render);
+  sort.addEventListener('change', render);
+  render();
+})();
+</script>
+<script>
+/* Home additions: reveal, signature carousel arrows, occasion booking */
+(function () {
+  var els = document.querySelectorAll('.hx-in');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    els.forEach(function (el, i) { el.style.setProperty('--d', i % 4); io.observe(el); });
+  } else { els.forEach(function (el) { el.classList.add('is-in'); }); }
+
+  var track = document.getElementById('hsigTrack');
+  document.querySelectorAll('.hsig__nav button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var step = track.firstElementChild.getBoundingClientRect().width + 20;
+      track.scrollBy({ left: step * parseInt(b.dataset.dir, 10), behavior: 'smooth' });
+    });
+  });
+
+  document.querySelectorAll('[data-occ]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      var want = a.dataset.occ;
+      document.querySelectorAll('#contact select').forEach(function (sel) {
+        Array.prototype.forEach.call(sel.options, function (o) {
+          if (o.text.trim() === want) { sel.value = o.value; sel.dispatchEvent(new Event('change', { bubbles: true })); }
+        });
+      });
+    });
+  });
+})();
+</script>
+<script>
+/* Suit cards: hover cycles through poses, dots switch manually */
+(function () {
+  document.querySelectorAll('.scat__media').forEach(function (m) {
+    var imgs = m.querySelectorAll('.scat__img'), dots = m.querySelectorAll('.scat__dot'), i = 0, t = null;
+    if (imgs.length < 2) { var d = m.querySelector('.scat__dots'); if (d) d.hidden = true; return; }
+    function show(n) { i = (n + imgs.length) % imgs.length; imgs.forEach(function (im, k) { im.classList.toggle('is-on', k === i); }); dots.forEach(function (d, k) { d.classList.toggle('is-on', k === i); }); }
+    dots.forEach(function (d, k) { d.addEventListener('click', function () { show(k); }); });
+    var pic = m.querySelector('.scat__pic');
+    pic.addEventListener('mouseenter', function () { show(i + 1); t = setInterval(function () { show(i + 1); }, 1600); });
+    pic.addEventListener('mouseleave', function () { clearInterval(t); show(0); });
+  });
+})();
+</script>
 </body>
 </html>
