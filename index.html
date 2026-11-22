@@ -503,7 +503,7 @@
   </section>
 
   <!-- ═══ COLLECTIONS ═══ -->
-  <section class="hx hx--dark hcol" aria-labelledby="hcolTitle">
+  <section class="hx hx--dark hcol" aria-labelledby="hcolTitle" hidden style="display:none">
     <p class="hx__eye">The Collections</p>
     <h2 class="hx__title" id="hcolTitle">Three houses, one hand</h2>
     <div class="hcol__grid">
@@ -1315,7 +1315,7 @@
 </style>
 <script>
 (function () {
-  var grid = document.querySelector('.hcol__grid'); if (!grid) return;
+  var grid = document.querySelector('.hcol__grid'); if (!grid || grid.closest('[hidden]')) return;
   var cards = Array.prototype.slice.call(grid.querySelectorAll('.hcol__card'));
   var n = cards.length;
   var phone = matchMedia('(max-width:760px)'), calm = matchMedia('(prefers-reduced-motion:reduce)').matches;
