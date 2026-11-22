@@ -409,6 +409,19 @@
   current = -1; front = 0;
   activate(start);
   window.ethReady = function () { stage.classList.add('is-ready'); };
+  // phones: until a style is picked, the backgrounds take turns on their own
+  (function () {
+    if (!matchMedia('(max-width:760px)').matches || location.hash || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    var withBg = DATA.map(function (d, k) { return d.bg ? k : -1; }).filter(function (k) { return k > -1; });
+    if (withBg.length < 2) return;
+    var pos = Math.max(0, withBg.indexOf(start)), auto = setInterval(function () {
+      if (document.hidden || openIdx > -1) return;
+      pos = (pos + 1) % withBg.length; activate(withBg[pos]);
+    }, 3600);
+    function stopAuto() { if (auto) { clearInterval(auto); auto = null; } }
+    list.addEventListener('click', stopAuto, true);
+    panel.addEventListener('click', stopAuto, true);
+  })();
 })();
 </script>
 <script>
