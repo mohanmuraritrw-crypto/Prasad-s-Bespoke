@@ -432,6 +432,14 @@
 .osel__list li:hover,.osel__list li.is-active{background:#efe3d3;color:#4a3726}
 .osel__list li[aria-selected="true"]{font-weight:600}
 </style>
+<!-- Google tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18589775354"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18589775354');
+</script>
 </head>
 <body>
 <div class="preloader" id="pre" aria-hidden="true">
@@ -1664,5 +1672,33 @@
 })();
 </script>
 
+<script>
+/* Visitors arriving from a Google/YouTube ad get an ad-specific WhatsApp message */
+(function(){
+  try{
+    var q=location.search, fromAd=/[?&](gclid|gbraid|wbraid)=/.test(q)||/[?&]utm_source=(google|youtube)/i.test(q);
+    if(fromAd){ try{sessionStorage.setItem('pbAd','1')}catch(e){} }
+    try{ if(sessionStorage.getItem('pbAd')==='1') fromAd=true }catch(e){}
+    if(!fromAd) return;
+    var msg=encodeURIComponent('Hi, I saw your ad and want to book a wedding fitting.');
+    document.querySelectorAll('a[href^="https://wa.me/918555002624"]').forEach(function(a){
+      a.href='https://wa.me/918555002624?text='+msg;
+    });
+  }catch(e){}
+})();
+/* Google Ads conversion: count WhatsApp clicks (links and the booking form) */
+(function(){
+  var sent=false;
+  function track(){ if(sent||typeof gtag!=='function') return; sent=true;
+    gtag('event','conversion',{'send_to':'AW-18589775354/f-CyCLvBzr0dEPrrpaBF','transport_type':'beacon'});
+    setTimeout(function(){sent=false;},3000); }
+  document.addEventListener('click', function(e){
+    var a = e.target.closest && e.target.closest('a[href*="wa.me/"],a[href*="whatsapp.com/"]');
+    if (a) track();
+  }, true);
+  var _open=window.open;
+  window.open=function(u){ try{ if(/wa\.me\/|whatsapp\.com\//.test(String(u))) track(); }catch(e){} return _open.apply(window, arguments); };
+})();
+</script>
 </body>
 </html>
