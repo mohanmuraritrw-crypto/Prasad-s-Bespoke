@@ -731,7 +731,7 @@
     if(fromAd){ try{sessionStorage.setItem('pbAd','1')}catch(e){} }
     try{ if(sessionStorage.getItem('pbAd')==='1') fromAd=true }catch(e){}
     if(!fromAd) return;
-    var msg=encodeURIComponent('Hi, I saw your ad and want to book a wedding fitting.');
+    var msg=encodeURIComponent('I have seen your ad and I would like to book a fitting.');
     document.querySelectorAll('a[href^="https://wa.me/918555002624"]').forEach(function(a){
       a.href='https://wa.me/918555002624?text='+msg;
     });
