@@ -45,6 +45,7 @@
   .eth__eye{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
   .eth__count{font-family:var(--serif);font-size:clamp(54px,6vw,96px);line-height:1;margin:14px 0 10px;font-weight:300}
   .eth__count span{font-size:.38em;color:var(--muted)}
+  .eth__for{margin-top:10px;font-family:var(--serif);font-style:italic;font-size:clamp(16px,1.25vw,20px);color:var(--gold-2)}
   .eth__desc{font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.4vw,22px);line-height:1.45;color:var(--muted);margin:0;min-height:3em;transition:opacity .4s}
 
   /* ── right title list ── */
@@ -169,6 +170,14 @@
   html::-webkit-scrollbar, body::-webkit-scrollbar, *::-webkit-scrollbar { display: none !important; width: 0 !important; height: 0 !important; }
 </style>
 <style>.eth__soon{grid-column:1/-1;margin:8vh 0 0;font-family:var(--serif);font-size:clamp(28px,3vw,46px);line-height:1.15;color:var(--white)}.eth__soon span{display:block;margin-top:16px;font-family:inherit;font-size:16px;line-height:1.6;opacity:.75}.eth__soon a{color:inherit;border-bottom:1px solid currentColor}</style>
+<!-- Google tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18589775354"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18589775354');
+</script>
 </head>
 <body>
 <div class="pl" id="pl" aria-hidden="true">
@@ -190,7 +199,8 @@
   </header>
 
   <div class="eth__info">
-    <div class="eth__eye">Ethnic collection</div>
+    <div class="eth__eye">Wedding &amp; festive collection</div>
+    <div class="eth__for">For the groom, his father &amp; brothers</div>
     <div class="eth__count"><b id="ethNum">01</b> <span>/ 05</span></div>
     <p class="eth__desc" id="ethDesc"></p>
   </div>
@@ -713,5 +723,27 @@
 })();
 </script>
 
+<script>
+/* Visitors arriving from a Google/YouTube ad get an ad-specific WhatsApp message */
+(function(){
+  try{
+    var q=location.search, fromAd=/[?&](gclid|gbraid|wbraid)=/.test(q)||/[?&]utm_source=(google|youtube)/i.test(q);
+    if(fromAd){ try{sessionStorage.setItem('pbAd','1')}catch(e){} }
+    try{ if(sessionStorage.getItem('pbAd')==='1') fromAd=true }catch(e){}
+    if(!fromAd) return;
+    var msg=encodeURIComponent('Hi, I saw your ad and want to book a wedding fitting.');
+    document.querySelectorAll('a[href^="https://wa.me/918555002624"]').forEach(function(a){
+      a.href='https://wa.me/918555002624?text='+msg;
+    });
+  }catch(e){}
+})();
+/* Google Ads conversion: count WhatsApp clicks */
+document.addEventListener('click', function(e){
+  var a = e.target.closest && e.target.closest('a[href*="wa.me/"]');
+  if (a && typeof gtag === 'function') {
+    gtag('event', 'conversion', {'send_to': 'AW-18589775354/f-CyCLvBzr0dEPrrpaBF', 'transport_type': 'beacon'});
+  }
+}, true);
+</script>
 </body>
 </html>
