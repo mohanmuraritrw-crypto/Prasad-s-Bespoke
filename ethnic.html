@@ -195,7 +195,7 @@
   <header class="eth__bar">
     <a class="eth__back" href="./index.html"><i>←</i><b>Back to the house</b></a>
     <a class="eth__brand" href="./index.html" aria-label="Prasad's Bespoke, home"><b>PRASAD’S</b><small>BESPOKE</small></a>
-    <a class="eth__book" href="./index.html#contact">Book a fitting</a>
+    <a class="eth__book" href="./index.html#contact">Book an appointment</a>
   </header>
 
   <div class="eth__info">
@@ -225,7 +225,7 @@
   <div class="lb__bar">
     <div class="lb__info"><span class="lb__count" id="lbCount"></span><h3 class="lb__name" id="lbName"></h3></div>
     <div class="lb__thumbs" id="lbThumbs"></div>
-    <a class="lb__book" href="./index.html#contact">Book a fitting</a>
+    <a class="lb__book" href="./index.html#contact">Book an appointment</a>
   </div>
   <button class="lb__close" id="lbClose" type="button" aria-label="Close">✕</button>
 </div>
@@ -319,7 +319,7 @@
   function fill(i) {
     var d = DATA[i];
     pTitle.textContent = d.title;
-    if (d.soon) { grid.innerHTML = '<p class="eth__soon">Catalogue coming soon.<br><span>Every ' + (d.one || d.title.replace(/s$/, '').toLowerCase()) + ' is still made to order. <a href="./index.html#contact">Book a sitting</a> to have yours cut.</span></p>'; void grid.offsetWidth; grid.classList.add('show'); return; }
+    if (d.soon) { grid.innerHTML = '<p class="eth__soon">Catalogue coming soon.<br><span>Every ' + (d.one || d.title.replace(/s$/, '').toLowerCase()) + ' is still made to order. <a href="./index.html#contact">Book an appointment</a> to have yours cut.</span></p>'; void grid.offsetWidth; grid.classList.add('show'); return; }
     grid.innerHTML = d.items.map(function (it, k) {
       var pics = Array.isArray(it[1]) ? it[1] : [it[1]];
       var imgs = pics.map(function (src, j) {
@@ -563,7 +563,7 @@
   }
   @media (prefers-reduced-motion:reduce){.wa,.wa::before,.wa__pulse{animation:none;opacity:1;transform:none}}
 </style>
-<a class="wa" href="https://wa.me/918555002624?text=Hello%20Prasad%E2%80%99s%20Bespoke%2C%20I%E2%80%99d%20like%20to%20book%20a%20fitting." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+<a class="wa" href="https://wa.me/918555002624?text=Hello%20Prasad%E2%80%99s%20Bespoke%2C%20I%E2%80%99d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
   <span class="wa__pulse" aria-hidden="true"></span>
   <span class="wa__ic" aria-hidden="true">
     <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
