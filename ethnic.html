@@ -182,6 +182,41 @@
 <script type="text/javascript">
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "zi24xhu35j");
 </script>
+<style>
+/* ── phone catalogue: full screen, 4 at a time, swipeable cards, full-screen viewer ── */
+.eth__chips,.eth__dots{display:none}
+@media (max-width:760px){
+  .eth__panel{height:auto;top:0;bottom:0;padding:74px 16px 0;-webkit-mask-image:none;mask-image:none;background:linear-gradient(180deg,rgba(12,8,5,.985) 0%,rgba(12,8,5,.96) 100%)}
+  .eth.is-open .eth__list,.eth.is-open .eth__info{opacity:0;pointer-events:none;transition:opacity .35s}
+  .eth__ph{margin-bottom:12px}
+  .eth__chips{display:flex;gap:8px;overflow-x:auto;margin:0 -16px 14px;padding:0 16px 2px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .eth__chips::-webkit-scrollbar{display:none}
+  .eth__chips button{flex:none;padding:8px 14px;border:1px solid rgba(232,207,174,.38);border-radius:999px;font-family:"Montserrat",sans-serif;font-size:11px;letter-spacing:.06em;color:#e8cfae;white-space:nowrap;background:transparent}
+  .eth__chips button.on{background:#e8cfae;color:#0c0805;border-color:#e8cfae}
+  .eth__grid{gap:16px 10px;padding:0 0 110px}
+  .eth__card figure{padding-bottom:0;height:calc((100vh - 272px) / 2);height:calc((100dvh - 272px) / 2);min-height:170px;touch-action:pan-y}
+  .eth__card figure img{object-position:50% 12%}
+  .eth__grid .eth__card.is-live img,.eth__grid .eth__card:hover img{transform:none!important}
+  .eth__card h3{font-size:13.5px}
+  .eth__card hr{margin:7px 0 5px}
+  .eth__dots{display:flex;position:absolute;left:0;right:0;bottom:8px;z-index:2;justify-content:center;gap:5px;pointer-events:none}
+  .eth__dots i{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.45);transition:background .3s,transform .3s}
+  .eth__dots i.on{background:#fff;transform:scale(1.25)}
+  .lb{display:none!important}
+}
+.fv{position:fixed;inset:0;z-index:10000;background:#060403;opacity:0;visibility:hidden;transition:opacity .3s ease,visibility 0s linear .3s;touch-action:none;overflow:hidden}
+.fv.open{opacity:1;visibility:visible;transition:opacity .3s ease}
+.fv__img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;will-change:transform;-webkit-user-drag:none;user-select:none}
+.fv__img.--anim{transition:transform .32s cubic-bezier(.22,1,.36,1),opacity .32s}
+.fv__top,.fv__cap{position:absolute;left:0;right:0;z-index:2;display:flex;align-items:center;justify-content:space-between;padding:16px 16px;transition:opacity .3s}
+.fv__top{top:0;background:linear-gradient(180deg,rgba(0,0,0,.6),transparent)}
+.fv__cap{bottom:0;flex-direction:column;align-items:flex-start;gap:6px;padding:40px 18px 26px;background:linear-gradient(0deg,rgba(0,0,0,.7),transparent)}
+.fv.hide-ui .fv__top,.fv.hide-ui .fv__cap{opacity:0;pointer-events:none}
+.fv__count{font-family:"Montserrat",sans-serif;font-size:11px;letter-spacing:.24em;color:#e8cfae}
+.fv__close{width:42px;height:42px;border-radius:50%;border:1px solid rgba(232,207,174,.5);background:rgba(20,14,10,.5);color:#f3dcc0;font-size:15px;display:grid;place-items:center}
+.fv__name{margin:0;font-family:"Cormorant Garamond",serif;font-weight:400;font-size:26px;color:#fff}
+.fv__hint{font-family:"Montserrat",sans-serif;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,207,174,.7)}
+</style>
 </head>
 <body>
 <div class="pl" id="pl" aria-hidden="true">
@@ -216,10 +251,16 @@
       <div><div class="eth__eye">The selection</div><h2 id="ethPanelTitle"></h2></div>
       <button class="eth__close" id="ethClose" type="button" aria-label="Close">✕</button>
     </div>
+    <div class="eth__chips" id="ethChips"></div>
     <div class="eth__grid" id="ethGrid"></div>
   </aside>
 </section>
 
+<div class="fv" id="fv" role="dialog" aria-modal="true" aria-label="Outfit photo" aria-hidden="true">
+  <img class="fv__img" id="fvImg" src="" alt="">
+  <div class="fv__top"><span class="fv__count" id="fvCount"></span><button class="fv__close" id="fvClose" type="button" aria-label="Close">✕</button></div>
+  <div class="fv__cap"><h3 class="fv__name" id="fvName"></h3><span class="fv__hint">Swipe for more &middot; swipe down to close</span></div>
+</div>
 <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Outfit photos" aria-hidden="true">
   <div class="lb__stage">
     <button class="lb__arrow --prev" id="lbPrev" type="button" aria-label="Previous photo">←</button>
@@ -323,6 +364,8 @@
   function fill(i) {
     var d = DATA[i];
     pTitle.textContent = d.title;
+    grid.scrollTop = 0;
+    if (window.ethChips) window.ethChips(i);
     if (d.soon) { grid.innerHTML = '<p class="eth__soon">Catalogue coming soon.<br><span>Every ' + (d.one || d.title.replace(/s$/, '').toLowerCase()) + ' is still made to order. <a href="./index.html#contact">Book an appointment</a> to have yours cut.</span></p>'; void grid.offsetWidth; grid.classList.add('show'); return; }
     grid.innerHTML = d.items.map(function (it, k) {
       var pics = Array.isArray(it[1]) ? it[1] : [it[1]];
@@ -333,6 +376,7 @@
              '<figure><div class="eth__slides">' + imgs + '</div></figure><hr><h3>' + it[0] + '</h3></a>';
     }).join('');
     setupSlides(d);
+    grid.scrollTop = 0;
     void grid.offsetWidth;
     grid.classList.add('show');
   }
@@ -347,10 +391,14 @@
         card.addEventListener('mouseenter', function () { clearInterval(timer); go(cur + 1); timer = setInterval(function () { go(cur + 1); }, 1500); });
         card.addEventListener('mouseleave', function () { clearInterval(timer); go(0); });
       }
+      card._go = go; card._cur = function () { return cur; }; card._n = n;
+      if (window.ethPhone && window.ethPhone.matches) { card._cycle = null; if (window.ethCard) window.ethCard(card, d, k); }
       card.addEventListener('click', function (e) {
         e.preventDefault();
         clearInterval(timer);
+        if (card._swiped) { card._swiped = false; return; }
         var it = d.items[k];
+        if (window.ethPhone && window.ethPhone.matches && window.fvOpen) { window.fvOpen(d, k, n > 1 ? cur : 0); return; }
         lbOpen(it[0], Array.isArray(it[1]) ? it[1] : [it[1]], n > 1 ? cur : 0);
       });
     });
@@ -405,6 +453,15 @@
       grid.classList.remove('show'); fill(i);
     }
   }
+  window.ethOpenStyle = function (i) { open(i); };
+  window.ethChips = function (i) {
+    var box = document.getElementById('ethChips'); if (!box) return;
+    if (!box.children.length) {
+      box.innerHTML = DATA.map(function (x, k) { return '<button type="button" data-k="' + k + '">' + x.title + '</button>'; }).join('');
+      box.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) open(+b.dataset.k); });
+    }
+    Array.prototype.forEach.call(box.children, function (b, k) { b.classList.toggle('on', k === i); if (k === i && b.scrollIntoView) b.scrollIntoView({ inline: 'center', block: 'nearest' }); });
+  };
   function close() {
     stage.classList.remove('is-open');
     grid.classList.remove('show');
@@ -748,6 +805,87 @@ document.addEventListener('click', function(e){
     gtag('event', 'conversion', {'send_to': 'AW-18589775354/f-CyCLvBzr0dEPrrpaBF', 'transport_type': 'beacon'});
   }
 }, true);
+</script>
+<script>
+/* ── phone: swipeable cards that auto-advance when left alone, and a full-screen photo viewer ── */
+(function () {
+  var phone = window.ethPhone = matchMedia('(max-width:760px)');
+  var grid = document.getElementById('ethGrid');
+  var calm = matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var cards = [], seen = new Set();
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function (es) {
+    es.forEach(function (e) { e.isIntersecting ? seen.add(e.target) : seen.delete(e.target); });
+  }, { root: grid, threshold: 0.6 }) : null;
+
+  function dots(card) {
+    var fig = card.querySelector('figure'), n = card._n; if (n < 2 || fig.querySelector('.eth__dots')) return;
+    var d = document.createElement('div'); d.className = 'eth__dots';
+    d.innerHTML = new Array(n + 1).join('<i></i>'); fig.appendChild(d); paint(card);
+  }
+  function paint(card) { var d = card.querySelector('.eth__dots'); if (!d) return; var c = card._cur(); Array.prototype.forEach.call(d.children, function (x, j) { x.classList.toggle('on', j === c); }); }
+  function step(card, by) { card._go(card._cur() + by); paint(card); }
+
+  window.ethCard = function (card) {
+    if (card._n > 1) {
+      dots(card);
+      var fig = card.querySelector('figure'), sx = 0, sy = 0, st = 0;
+      fig.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; st = Date.now(); card._pause = Date.now() + 5000; }, { passive: true });
+      fig.addEventListener('touchend', function (e) {
+        var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+        card._pause = Date.now() + 5000;
+        if (Math.abs(dx) > 30 && Math.abs(dx) > Math.abs(dy) * 1.2) { card._swiped = true; step(card, dx < 0 ? 1 : -1); setTimeout(function () { card._swiped = false; }, 400); }
+      }, { passive: true });
+    }
+    cards.push(card); if (io) io.observe(card);
+  };
+  /* gentle auto-advance of the cards on screen, staggered, skipping any the visitor touched in the last 5 s */
+  if (!calm) setInterval(function () {
+    if (!phone.matches || document.hidden || document.getElementById('fv').classList.contains('open')) return;
+    var k = 0, now = Date.now();
+    cards.forEach(function (c) {
+      if (!document.body.contains(c) || !seen.has(c) || c._n < 2 || (c._pause && now < c._pause)) return;
+      setTimeout(function () { step(c, 1); }, (k++) * 380);
+    });
+  }, 3400);
+  new MutationObserver(function () { cards = cards.filter(function (c) { return document.body.contains(c); }); }).observe(grid, { childList: true });
+
+  /* full-screen viewer: every photo of the selected collection in one swipeable run */
+  var fv = document.getElementById('fv'), img = document.getElementById('fvImg'), nm = document.getElementById('fvName'), cnt = document.getElementById('fvCount');
+  var seq = [], at = 0;
+  function show(i, dir) {
+    at = (i + seq.length) % seq.length; var s = seq[at];
+    img.classList.remove('--anim'); img.style.transition = 'none';
+    img.style.transform = dir ? 'translateX(' + (dir * 40) + '%)' : 'scale(.97)'; img.style.opacity = '0';
+    img.src = s.src; img.alt = s.name; nm.textContent = s.name; cnt.textContent = (at + 1) + ' / ' + seq.length;
+    void img.offsetWidth; img.style.transition = ''; img.classList.add('--anim'); img.style.transform = 'none'; img.style.opacity = '1';
+    [1, -1].forEach(function (o) { var p = seq[(at + o + seq.length) % seq.length]; if (p) (new Image()).src = p.src; });
+  }
+  window.fvOpen = function (d, k, j) {
+    seq = []; var start = 0;
+    d.items.forEach(function (it, ik) { (Array.isArray(it[1]) ? it[1] : [it[1]]).forEach(function (src, jj) { if (ik === k && jj === j) start = seq.length; seq.push({ src: src, name: it[0] }); }); });
+    fv.classList.remove('hide-ui'); fv.classList.add('open'); fv.setAttribute('aria-hidden', 'false'); show(start, 0);
+  };
+  function close() { fv.classList.remove('open'); fv.setAttribute('aria-hidden', 'true'); }
+  document.getElementById('fvClose').addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (!fv.classList.contains('open')) return; if (e.key === 'Escape') { e.stopImmediatePropagation(); close(); } if (e.key === 'ArrowRight') show(at + 1, 1); if (e.key === 'ArrowLeft') show(at - 1, -1); }, true);
+  var x0 = 0, y0 = 0, t0 = 0, drag = false;
+  fv.addEventListener('touchstart', function (e) { if (e.target.closest('.fv__close')) return; x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; t0 = Date.now(); drag = true; img.classList.remove('--anim'); }, { passive: true });
+  fv.addEventListener('touchmove', function (e) {
+    if (!drag) return; var dx = e.touches[0].clientX - x0, dy = e.touches[0].clientY - y0;
+    if (Math.abs(dx) > Math.abs(dy)) img.style.transform = 'translateX(' + dx + 'px)';
+    else if (dy > 0) { img.style.transform = 'translateY(' + dy + 'px) scale(' + Math.max(.85, 1 - dy / 1200) + ')'; fv.style.background = 'rgba(6,4,3,' + Math.max(.4, 1 - dy / 500) + ')'; }
+  }, { passive: true });
+  fv.addEventListener('touchend', function (e) {
+    if (!drag) return; drag = false; fv.style.background = '';
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0, fast = Date.now() - t0 < 250;
+    img.classList.add('--anim');
+    if (Math.abs(dx) > Math.abs(dy) && (Math.abs(dx) > 60 || (fast && Math.abs(dx) > 25))) {
+      var dir = dx < 0 ? 1 : -1; img.style.transform = 'translateX(' + (-dir * 110) + '%)'; img.style.opacity = '0';
+      setTimeout(function () { show(at + dir, dir); }, 170);
+    } else if (dy > 110 && Math.abs(dy) > Math.abs(dx)) { close(); img.style.transform = 'none'; }
+    else { img.style.transform = 'none'; if (Math.abs(dx) < 8 && Math.abs(dy) < 8 && !e.target.closest('.fv__close')) fv.classList.toggle('hide-ui'); }
+  }, { passive: true });
+})();
 </script>
 </body>
 </html>
